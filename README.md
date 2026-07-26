@@ -15,8 +15,8 @@ for GitHub Pages.
 ## Local development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_ADMIN_PASSWORD` to
