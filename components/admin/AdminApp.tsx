@@ -1,16 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { isSessionUnlocked } from "@/lib/admin-auth";
+import { useState } from "react";
+import { useSessionUnlocked } from "@/lib/admin-auth";
 import AdminEditor from "./AdminEditor";
 import AdminGate from "./AdminGate";
 
 export default function AdminApp() {
-  const [unlocked, setUnlocked] = useState(false);
+  const sessionUnlocked = useSessionUnlocked();
+  const [manualUnlock, setManualUnlock] = useState(false);
+  const unlocked = sessionUnlocked || manualUnlock;
 
-  useEffect(() => {
-    setUnlocked(isSessionUnlocked());
-  }, []);
-
-  return unlocked ? <AdminEditor onLock={() => setUnlocked(false)} /> : <AdminGate onUnlock={() => setUnlocked(true)} />;
+  return unlocked ? (
+    <AdminEditor onLock={() => setManualUnlock(false)} />
+  ) : (
+    <AdminGate onUnlock={() => setManualUnlock(true)} />
+  );
 }

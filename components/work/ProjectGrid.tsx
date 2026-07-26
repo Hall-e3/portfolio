@@ -36,7 +36,7 @@ export default function ProjectGrid() {
         <WorkFilterTabs active={filter} onChange={setFilter} />
         <span className="font-mono text-xs text-mut">{String(shown.length).padStart(2, "0")} shown</span>
       </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {shown.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

@@ -1,17 +1,66 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
 import { defaultContent } from "@/content/site-content";
 import type { HeroFields, Project, Service, SiteContent, SkillGroup } from "@/content/types";
 
 const STORAGE_KEY = "hall-pf-content-v1";
+const CHANGE_EVENT = "pf-content-changed";
 
-function persist(content: SiteContent) {
+let cachedRaw: string | null = null;
+let cachedContent: SiteContent = defaultContent;
+
+function readRaw(): string | null {
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+/** Module-level cache so repeated reads return a stable reference for useSyncExternalStore. */
+function getSnapshot(): SiteContent {
+  const raw = readRaw();
+  if (raw !== cachedRaw) {
+    cachedRaw = raw;
+    try {
+      cachedContent = raw ? { ...defaultContent, ...JSON.parse(raw) } : defaultContent;
+    } catch {
+      cachedContent = defaultContent;
+    }
+  }
+  return cachedContent;
+}
+
+function getServerSnapshot(): SiteContent {
+  return defaultContent;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener(CHANGE_EVENT, callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    window.removeEventListener(CHANGE_EVENT, callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
+function writeContent(content: SiteContent) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
   } catch {
-    // localStorage unavailable — edits stay in memory for this session only
+    // localStorage unavailable — edits stay in memory for this render only
   }
+  window.dispatchEvent(new Event(CHANGE_EVENT));
+}
+
+function clearContent() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    // ignore
+  }
+  window.dispatchEvent(new Event(CHANGE_EVENT));
 }
 
 function upsertById<T extends { id: number }>(list: T[], item: T): T[] {
@@ -20,6 +69,10 @@ function upsertById<T extends { id: number }>(list: T[], item: T): T[] {
   const next = [...list];
   next[index] = item;
   return next;
+}
+
+function nextIdFor(items: { id: number }[]): number {
+  return items.reduce((max, item) => Math.max(max, item.id), 0) + 1;
 }
 
 interface ContentStoreValue {
@@ -39,81 +92,60 @@ interface ContentStoreValue {
 const ContentStoreContext = createContext<ContentStoreValue | null>(null);
 
 export function ContentStoreProvider({ children }: { children: React.ReactNode }) {
-  const [content, setContent] = useState<SiteContent>(defaultContent);
-  const nextId = useRef(Date.now());
+  const content = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) setContent({ ...defaultContent, ...JSON.parse(raw) });
-    } catch {
-      // corrupt or inaccessible storage — fall back to defaults already in state
-    }
-  }, []);
-
-  const update = useCallback((updater: (prev: SiteContent) => SiteContent) => {
-    setContent((prev) => {
-      const next = updater(prev);
-      persist(next);
-      return next;
-    });
+  const mutate = useCallback((updater: (prev: SiteContent) => SiteContent) => {
+    writeContent(updater(getSnapshot()));
   }, []);
 
   const updateHero = useCallback(
-    (patch: Partial<HeroFields>) => update((prev) => ({ ...prev, ...patch })),
-    [update]
+    (patch: Partial<HeroFields>) => mutate((prev) => ({ ...prev, ...patch })),
+    [mutate]
   );
 
   const upsertService = useCallback(
     (service: Service) =>
-      update((prev) => ({
+      mutate((prev) => ({
         ...prev,
-        services: upsertById(prev.services, service.id ? service : { ...service, id: nextId.current++ }),
+        services: upsertById(prev.services, service.id ? service : { ...service, id: nextIdFor(prev.services) }),
       })),
-    [update]
+    [mutate]
   );
 
   const deleteService = useCallback(
-    (id: number) => update((prev) => ({ ...prev, services: prev.services.filter((s) => s.id !== id) })),
-    [update]
+    (id: number) => mutate((prev) => ({ ...prev, services: prev.services.filter((s) => s.id !== id) })),
+    [mutate]
   );
 
   const upsertProject = useCallback(
     (project: Project) =>
-      update((prev) => ({
+      mutate((prev) => ({
         ...prev,
-        projects: upsertById(prev.projects, project.id ? project : { ...project, id: nextId.current++ }),
+        projects: upsertById(prev.projects, project.id ? project : { ...project, id: nextIdFor(prev.projects) }),
       })),
-    [update]
+    [mutate]
   );
 
   const deleteProject = useCallback(
-    (id: number) => update((prev) => ({ ...prev, projects: prev.projects.filter((p) => p.id !== id) })),
-    [update]
+    (id: number) => mutate((prev) => ({ ...prev, projects: prev.projects.filter((p) => p.id !== id) })),
+    [mutate]
   );
 
   const upsertSkillGroup = useCallback(
     (group: SkillGroup) =>
-      update((prev) => ({
+      mutate((prev) => ({
         ...prev,
-        skills: upsertById(prev.skills, group.id ? group : { ...group, id: nextId.current++ }),
+        skills: upsertById(prev.skills, group.id ? group : { ...group, id: nextIdFor(prev.skills) }),
       })),
-    [update]
+    [mutate]
   );
 
   const deleteSkillGroup = useCallback(
-    (id: number) => update((prev) => ({ ...prev, skills: prev.skills.filter((s) => s.id !== id) })),
-    [update]
+    (id: number) => mutate((prev) => ({ ...prev, skills: prev.skills.filter((s) => s.id !== id) })),
+    [mutate]
   );
 
-  const resetContent = useCallback(() => {
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // ignore
-    }
-    setContent(defaultContent);
-  }, []);
+  const resetContent = useCallback(() => clearContent(), []);
 
   const exportJSON = useCallback(() => JSON.stringify(content, null, 2), [content]);
 
@@ -121,13 +153,13 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
     (json: string) => {
       try {
         const parsed = JSON.parse(json);
-        update((prev) => ({ ...prev, ...parsed }));
+        mutate((prev) => ({ ...prev, ...parsed }));
         return true;
       } catch {
         return false;
       }
     },
-    [update]
+    [mutate]
   );
 
   const value = useMemo<ContentStoreValue>(

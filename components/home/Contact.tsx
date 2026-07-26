@@ -34,9 +34,9 @@ export default function Contact() {
           href={whatsappHref(c.whatsapp)}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-fg px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
+          className="inline-flex items-center gap-1.5 border border-fg px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
         >
-          WhatsApp →
+          WhatsApp <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
         </a>
         <button
           onClick={() => openBooking("Meeting")}

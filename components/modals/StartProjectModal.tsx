@@ -90,7 +90,7 @@ export default function StartProjectModal() {
         onClick={handleCompose}
         className="w-full bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg"
       >
-        Compose the email →
+        Compose the email
       </button>
     </Modal>
   );

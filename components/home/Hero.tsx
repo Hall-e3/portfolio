@@ -1,16 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { availableForWork } from "@/content/config";
 import { withBasePath } from "@/lib/base-path";
 import { useContentStore } from "@/lib/content-store";
 import { mailtoHref } from "@/lib/email";
+import avatar from "@/public/enoch.jpeg";
 
 export default function Hero() {
   const { content: c } = useContentStore();
 
   return (
     <section className="animate-pf-up py-24 sm:py-28">
+      <Image
+        src={avatar}
+        alt={c.name}
+        priority
+        className="mb-6 h-20 w-20 rounded-full border border-line object-cover sm:h-24 sm:w-24"
+      />
       {availableForWork && (
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-acc px-3.5 py-1.5 font-mono text-[11px] tracking-wider text-acc uppercase">
           <span className="animate-pf-pulse h-1.5 w-1.5 rounded-full bg-acc" />
@@ -20,7 +28,7 @@ export default function Hero() {
       <div className="mb-5 font-mono text-xs tracking-widest text-mut uppercase">
         {c.role} · {c.location}
       </div>
-      <h1 className="mb-7 max-w-3xl font-serif text-[clamp(44px,6.5vw,76px)] leading-[1.06] font-normal text-wrap-pretty">
+      <h1 className="mb-7 max-w-225 font-serif text-[clamp(44px,6.5vw,76px)] leading-[1.06] font-normal text-wrap-pretty">
         {c.headline}
       </h1>
       <p className="mb-9 max-w-150 text-[17px] leading-relaxed text-mut">{c.summary}</p>

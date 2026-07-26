@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import ModalHost from "@/components/modals/ModalHost";
 import { themeInitScript } from "@/lib/theme-context";
+import avatar from "@/public/enoch.jpeg";
 import { Providers } from "./providers";
 import "./globals.css";
 
@@ -33,6 +34,10 @@ export const metadata: Metadata = {
   title: "Hall Enoch Asanda — Full-Stack Software Engineer",
   description:
     "Full-stack engineer shipping production web and mobile apps across real estate, legal-tech, e-commerce, and fintech. React, Next.js, React Native, NestJS, Node.js.",
+  icons: {
+    icon: avatar.src,
+    apple: avatar.src,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -48,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-bg font-sans text-fg antialiased">
         <Providers>
           <Header />
-          <main className="mx-auto max-w-[1060px] px-6 sm:px-10">{children}</main>
+          <main className="mx-auto max-w-265 px-6 sm:px-10">{children}</main>
           <Footer />
           <ModalHost />
         </Providers>
