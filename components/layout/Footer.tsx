@@ -8,7 +8,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="flex items-center justify-between gap-4 border-t border-line px-6 py-6 font-mono text-[11px] text-mut sm:px-10">
+    <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-6 py-6 font-mono text-[11px] text-mut sm:px-10">
       <span>
         © {year} {content.name}
       </span>

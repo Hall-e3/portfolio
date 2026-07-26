@@ -32,7 +32,7 @@ export default function ProjectGrid() {
 
   return (
     <>
-      <div className="sticky top-[69px] z-40 mb-9 flex flex-wrap items-center justify-between gap-4 border-b border-fg bg-bg py-3.5">
+      <div className="sticky top-15 z-40 mb-9 flex flex-wrap items-center justify-between gap-4 border-b border-fg bg-bg py-3.5">
         <WorkFilterTabs active={filter} onChange={setFilter} />
         <span className="font-mono text-xs text-mut">{String(shown.length).padStart(2, "0")} shown</span>
       </div>
