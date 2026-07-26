@@ -34,9 +34,6 @@ jobs:
 
       - name: Build static export
         env:
-          # Set NEXT_PUBLIC_BASE_PATH as a repo Actions variable to "/<repo-name>"
-          # if this deploys as a project page (Settings > Pages). Leave unset
-          # for a user/org page (<user>.github.io).
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
           NEXT_PUBLIC_ADMIN_PASSWORD: ${{ secrets.NEXT_PUBLIC_ADMIN_PASSWORD }}
         run: pnpm run build
