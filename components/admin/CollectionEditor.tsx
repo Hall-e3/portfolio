@@ -69,7 +69,7 @@ export default function CollectionEditor<T extends { id: number }>({
         <h2 className="font-mono text-xs font-medium tracking-widest uppercase">{title}</h2>
         <button
           onClick={startAdd}
-          className="inline-flex items-center gap-1.5 rounded-full border border-acc bg-acc-soft px-3.5 py-1.5 font-mono text-xs text-acc"
+          className="inline-flex items-center gap-1.5 rounded-md border border-acc bg-acc-soft px-3.5 py-1.5 font-mono text-xs text-acc transition-all hover:bg-acc/20"
         >
           <PlusIcon className="h-3.5 w-3.5" /> {addLabel}
         </button>
@@ -79,7 +79,7 @@ export default function CollectionEditor<T extends { id: number }>({
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex items-center justify-between gap-4 border border-line bg-bg2 px-4.5 py-3.5"
+            className="flex items-center justify-between gap-4 rounded-md border border-line bg-bg2 px-4.5 py-3.5"
           >
             <div>
               <div className="text-sm font-semibold">{summaryTitle(item)}</div>
@@ -87,7 +87,7 @@ export default function CollectionEditor<T extends { id: number }>({
             </div>
             <button
               onClick={() => startEdit(item)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-acc px-3 py-1.5 font-mono text-xs text-acc"
+              className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-acc px-3 py-1.5 font-mono text-xs text-acc"
             >
               <PencilSquareIcon className="h-3.5 w-3.5" /> edit
             </button>
@@ -97,7 +97,7 @@ export default function CollectionEditor<T extends { id: number }>({
       </div>
 
       {editingId !== null && (
-        <div className="flex flex-col gap-5 border border-acc/40 bg-bg2 p-6">
+        <div className="flex flex-col gap-5 rounded-md border border-acc/40 bg-bg2 p-6">
           <EditableFieldForm
             fields={fields}
             values={draft}

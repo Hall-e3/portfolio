@@ -22,8 +22,8 @@ export default function WorkFilterTabs({ active, onChange }: WorkFilterTabsProps
             key={f.value}
             onClick={() => onChange(f.value)}
             aria-pressed={isActive}
-            className={`rounded-full border border-line px-4.5 py-2 font-mono text-xs tracking-wide ${
-              isActive ? "bg-fg text-bg" : "bg-transparent text-mut"
+            className={`rounded-md border border-line px-4.5 py-2 font-mono text-xs tracking-wide transition-all ${
+              isActive ? "bg-fg text-bg" : "bg-transparent text-mut hover:text-fg"
             }`}
           >
             {f.label}

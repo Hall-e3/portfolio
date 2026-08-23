@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const thumb = thumbnailUrl(project);
 
   return (
-    <article className="flex flex-col border border-line bg-bg2 transition-colors hover:border-acc">
+    <article className="flex flex-col rounded-md border border-line bg-bg2 shadow-sm transition-all hover:border-acc/60 overflow-hidden">
       <div className="relative h-52.5 overflow-hidden border-b border-line bg-bg">
         {thumb ? (
           <Image
@@ -50,7 +50,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-line px-2.5 py-0.5 font-mono text-[10px] text-mut"
+              className="rounded-md border border-line px-2.5 py-0.5 font-mono text-[10px] text-mut"
             >
               {t}
             </span>

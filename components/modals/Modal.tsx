@@ -69,7 +69,7 @@ export default function Modal({ open, onClose, ariaLabel, widthClassName = "max-
         role="dialog"
         aria-modal="true"
         aria-label={ariaLabel}
-        className={`fixed top-1/2 left-1/2 z-[81] w-[92vw] -translate-x-1/2 -translate-y-1/2 border border-line bg-bg2 p-5 shadow-2xl sm:p-8 ${widthClassName}`}
+        className={`fixed top-1/2 left-1/2 z-[81] w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-md border border-line bg-bg2 p-5 shadow-2xl sm:p-8 ${widthClassName}`}
       >
         {children}
       </div>

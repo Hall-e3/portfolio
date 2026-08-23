@@ -6,7 +6,7 @@ import { useModals } from "@/lib/modal-context";
 import ServiceCard from "./ServiceCard";
 
 const CTA_CLASSNAME =
-  "border border-fg px-4 py-2.5 text-center font-mono text-xs tracking-wide text-fg transition-colors hover:bg-fg hover:text-bg";
+  "rounded-md border border-fg px-4 py-2.5 text-center font-mono text-xs tracking-wide text-fg transition-all hover:bg-fg hover:text-bg";
 
 export default function Services() {
   const { content } = useContentStore();

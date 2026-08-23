@@ -26,7 +26,7 @@ export default function Contact() {
             e.preventDefault();
             composeEmail(c.email);
           }}
-          className="bg-acc px-6.5 py-3.5 font-mono text-[13px] font-semibold text-bg"
+          className="rounded-md bg-acc px-6.5 py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90"
         >
           Email me
         </a>
@@ -34,13 +34,13 @@ export default function Contact() {
           href={whatsappHref(c.whatsapp)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 border border-fg px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
+          className="inline-flex items-center gap-1.5 rounded-md border border-fg px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
         >
           WhatsApp <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
         </a>
         <button
           onClick={() => openBooking("Meeting")}
-          className="border border-fg bg-transparent px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
+          className="rounded-md border border-fg bg-transparent px-6.5 py-3.5 font-mono text-[13px] text-fg transition-colors hover:bg-fg hover:text-bg"
         >
           Book a meeting
         </button>

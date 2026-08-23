@@ -49,7 +49,7 @@ export default function ProjectGrid() {
         </p>
         <button
           onClick={openStartProject}
-          className="bg-acc px-7.5 py-3.5 font-mono text-[13px] font-semibold text-bg"
+          className="rounded-md bg-acc px-7.5 py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90"
         >
           Start a project
         </button>

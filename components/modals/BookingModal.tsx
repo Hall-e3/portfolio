@@ -66,10 +66,10 @@ export default function BookingModal() {
       </div>
       <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal">How would you like to meet?</h3>
       <p className="mb-4.5 text-[13px] leading-relaxed text-mut">{bookingBlurb(context)}</p>
-      <div className="mb-4.5 flex flex-col gap-2 border border-line bg-bg px-4 py-3.5">
+      <div className="mb-4.5 flex flex-col gap-2 rounded-md border border-line bg-bg px-4 py-3.5">
         {bookingDetails(context).map((d) => (
-          <div key={d.k} className="flex gap-3 text-[12.5px] leading-snug">
-            <span className="min-w-[88px] pt-px font-mono text-[10.5px] tracking-wider text-acc uppercase">
+          <div key={d.k} className="flex items-center gap-3 text-[12.5px] leading-snug">
+            <span className="min-w-[88px] rounded-md bg-acc-soft px-2 py-0.5 text-center font-mono text-[10.5px] font-medium tracking-wider text-acc uppercase">
               {d.k}
             </span>
             <span className="text-mut">{d.v}</span>
@@ -81,7 +81,7 @@ export default function BookingModal() {
           <button
             key={opt.key}
             onClick={opt.onPick}
-            className="flex items-center gap-3.5 border border-line bg-bg px-4.5 py-4 text-left transition-colors hover:border-acc"
+            className="flex items-center gap-3.5 rounded-md border border-line bg-bg px-4.5 py-4 text-left transition-colors hover:border-acc"
           >
             <opt.icon className="h-6 w-6 shrink-0 text-acc" />
             <span className="flex flex-col gap-0.5">

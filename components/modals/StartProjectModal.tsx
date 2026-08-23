@@ -68,13 +68,13 @@ export default function StartProjectModal() {
       </p>
       <div className="mb-5.5 flex flex-col gap-3">
         {CHECKLIST.map((item) => (
-          <div key={item.num} className="flex gap-3.5 border border-line bg-bg px-4 py-3.5">
+          <div key={item.num} className="flex gap-3.5 rounded-md border border-line bg-bg px-4 py-3.5">
             <span className="pt-0.5 font-mono text-xs text-acc">{item.num}</span>
             <div>
-              <div className="mb-0.5 text-sm font-semibold">
-                {item.title}{" "}
-                <span className="font-mono text-[10px] font-normal tracking-wider text-mut uppercase">
-                  · {item.tag}
+              <div className="mb-0.5 flex items-center gap-2 text-sm font-semibold">
+                <span>{item.title}</span>
+                <span className="rounded-md bg-acc-soft px-2 py-0.5 font-mono text-[10px] font-medium tracking-wider text-acc uppercase">
+                  {item.tag}
                 </span>
               </div>
               <div className="text-[12.5px] leading-snug text-mut">{item.desc}</div>
@@ -88,7 +88,7 @@ export default function StartProjectModal() {
       </p>
       <button
         onClick={handleCompose}
-        className="w-full bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg"
+        className="w-full rounded-md bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90"
       >
         Compose the email
       </button>

@@ -7,7 +7,7 @@ interface EditableFieldFormProps {
 }
 
 const FIELD_CLASSNAME =
-  "w-full rounded-lg border border-line bg-bg px-3 py-2.5 font-sans text-sm text-fg";
+  "w-full rounded-md border border-line bg-bg px-3 py-2.5 font-sans text-sm text-fg focus:border-acc focus:outline-none";
 
 export default function EditableFieldForm({ fields, values, onChange }: EditableFieldFormProps) {
   return (
