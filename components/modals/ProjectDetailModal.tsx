@@ -168,14 +168,14 @@ export default function ProjectDetailModal() {
             <p className="mt-1.5 text-base text-acc font-mono font-medium">{project.tagline}</p>
           )}
 
-          <p className="mt-3.5 text-sm leading-relaxed text-mut">{project.desc}</p>
+          <p className="mt-3.5 text-sm sm:text-base leading-relaxed text-mut">{project.desc}</p>
 
           {/* Quick Tech Badge Row */}
-          <div className="mt-4 flex flex-wrap gap-1.5">
+          <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-md border border-line bg-bg px-2.5 py-1 font-mono text-[11px] text-fg font-medium"
+                className="rounded-md border border-line bg-bg px-3 py-1 font-mono text-xs text-fg font-medium"
               >
                 {t}
               </span>
@@ -183,14 +183,14 @@ export default function ProjectDetailModal() {
           </div>
 
           {/* Links & CTA Action Bar */}
-          <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-y border-line py-3.5">
-            <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-y border-line py-4">
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs sm:text-sm">
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-md bg-acc-soft border border-acc/30 px-3 py-1.5 text-acc font-medium hover:bg-acc hover:text-bg transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-acc-soft border border-acc/30 px-3.5 py-2 text-acc font-medium hover:bg-acc hover:text-bg transition-colors cursor-pointer"
                 >
                   <GlobeAltIcon className="h-4 w-4" /> Live Website
                 </a>
@@ -200,7 +200,7 @@ export default function ProjectDetailModal() {
                   href={project.playLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-md border border-line bg-bg px-3 py-1.5 text-fg font-medium hover:border-acc hover:text-acc transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-line bg-bg px-3.5 py-2 text-fg font-medium hover:border-acc hover:text-acc transition-colors cursor-pointer"
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" /> Google Play
                 </a>
@@ -210,7 +210,7 @@ export default function ProjectDetailModal() {
                   href={project.appStoreLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-md border border-line bg-bg px-3 py-1.5 text-fg font-medium hover:border-acc hover:text-acc transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-line bg-bg px-3.5 py-2 text-fg font-medium hover:border-acc hover:text-acc transition-colors cursor-pointer"
                 >
                   <DevicePhoneMobileIcon className="h-4 w-4" /> Apple App Store
                 </a>
@@ -222,7 +222,7 @@ export default function ProjectDetailModal() {
                 closeProjectDetail();
                 openStartProject();
               }}
-              className="inline-flex items-center gap-1.5 rounded-md bg-acc px-4 py-2 font-mono text-xs font-semibold text-bg transition-all hover:opacity-90 shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-md bg-acc px-4 py-2 font-mono text-xs sm:text-sm font-semibold text-bg transition-all hover:opacity-90 shadow-sm cursor-pointer"
             >
               <SparklesIcon className="h-4 w-4" /> Request Similar Build
             </button>
@@ -230,17 +230,17 @@ export default function ProjectDetailModal() {
         </div>
 
         {/* Availability & Commitment Callout Box */}
-        <div className="rounded-lg border border-acc/40 bg-acc-soft p-4">
+        <div className="rounded-lg border border-acc/40 bg-acc-soft p-5">
           <div className="flex items-start gap-3">
             <ShieldCheckIcon className="h-5 w-5 text-acc shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-mono text-xs font-bold tracking-wider text-acc uppercase flex items-center gap-1.5">
+              <h4 className="font-mono text-xs sm:text-sm font-bold tracking-wider text-acc uppercase flex items-center gap-1.5">
                 <CheckCircleIcon className="h-4 w-4 text-acc" /> Maintenance &amp; Engineering Availability Notice
               </h4>
-              <p className="mt-1 text-xs text-fg leading-relaxed font-medium">
+              <p className="mt-1.5 text-sm sm:text-base text-fg leading-relaxed font-medium">
                 {maint.availabilityNotice}
               </p>
-              <p className="mt-1 text-[11px] text-mut">
+              <p className="mt-1 text-xs sm:text-sm text-mut">
                 <strong className="text-fg">Current SLA Commitment:</strong> {maint.clientCommitment}
               </p>
             </div>
