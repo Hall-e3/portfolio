@@ -36,7 +36,11 @@ export default function BookingModal() {
       name: "Zoom",
       note: "Request a Zoom call by email",
       onPick: () => {
-        composeEmail(content.email, `${context} request (Zoom) — ${content.name}`, buildMeetingRequestBody(content.name, "Zoom"));
+        composeEmail(
+          content.email,
+          `${context} request (Zoom) — ${content.name}`,
+          buildMeetingRequestBody(content.name, "Zoom"),
+        );
         closeBooking();
       },
     },
@@ -49,7 +53,7 @@ export default function BookingModal() {
         composeEmail(
           content.email,
           `${context} request (Google Meet) — ${content.name}`,
-          buildMeetingRequestBody(content.name, "Google Meet")
+          buildMeetingRequestBody(content.name, "Google Meet"),
         );
         closeBooking();
       },
@@ -59,16 +63,29 @@ export default function BookingModal() {
   return (
     <Modal open={open} onClose={closeBooking} ariaLabel={`Book ${context}`}>
       <div className="mb-2 flex items-start justify-between">
-        <span className="font-mono text-[11px] tracking-wider text-acc uppercase">Book · {context}</span>
-        <button onClick={closeBooking} aria-label="Close" className="text-mut hover:text-fg cursor-pointer">
+        <span className="font-mono text-[11px] tracking-wider text-acc uppercase">
+          Book · {context}
+        </span>
+        <button
+          onClick={closeBooking}
+          aria-label="Close"
+          className="text-mut hover:text-fg cursor-pointer"
+        >
           <XMarkIcon className="h-[18px] w-[18px]" />
         </button>
       </div>
-      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal text-fg">How would you like to meet?</h3>
-      <p className="mb-4.5 text-[13px] leading-relaxed text-mut">{bookingBlurb(context)}</p>
+      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal text-fg">
+        How would you like to meet?
+      </h3>
+      <p className="mb-4.5 text-[13px] leading-relaxed text-mut">
+        {bookingBlurb(context)}
+      </p>
       <div className="mb-4.5 flex flex-col gap-2 rounded-md border border-line bg-bg px-4 py-3.5">
         {bookingDetails(context).map((d) => (
-          <div key={d.k} className="flex items-center gap-3 text-[12.5px] leading-snug">
+          <div
+            key={d.k}
+            className="flex items-center gap-3 text-[12.5px] leading-snug"
+          >
             <span className="min-w-[88px] rounded-md bg-acc-soft px-2 py-0.5 text-center font-mono text-[10.5px] font-semibold tracking-wider text-acc uppercase">
               {d.k}
             </span>
@@ -85,7 +102,9 @@ export default function BookingModal() {
           >
             <opt.icon className="h-6 w-6 shrink-0 text-acc" />
             <span className="flex flex-col gap-0.5">
-              <span className="text-[15px] font-semibold text-fg">{opt.name}</span>
+              <span className="text-[15px] font-semibold text-fg">
+                {opt.name}
+              </span>
               <span className="font-mono text-[11px] text-mut">{opt.note}</span>
             </span>
             <ArrowRightIcon className="ml-auto h-4 w-4 text-acc" />

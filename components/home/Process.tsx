@@ -1,6 +1,10 @@
 "use client";
 
-import { ChatBubbleLeftRightIcon, RocketLaunchIcon, ShieldCheckIcon } from "@heroicons/react/24/outline";
+import {
+  ChatBubbleLeftRightIcon,
+  RocketLaunchIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline";
 
 const STEPS = [
   {
@@ -25,23 +29,35 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="py-10 pb-8">
-      <div className="mb-9 flex items-baseline justify-between border-b border-line pb-3.5">
-        <h2 className="font-mono text-xs font-medium tracking-widest uppercase">How I Work</h2>
-        <span className="font-mono text-xs text-mut">From concept to production</span>
+    <section className="py-10 pb-10">
+      <div className="mb-8 flex items-baseline justify-between border-b border-line pb-4">
+        <h2 className="font-mono text-xs sm:text-sm font-semibold tracking-widest text-acc uppercase">
+          How I Work
+        </h2>
+        <span className="font-mono text-xs sm:text-sm text-mut">
+          From concept to production
+        </span>
       </div>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         {STEPS.map((step) => (
           <div
             key={step.num}
-            className="flex flex-col gap-3 rounded-md border border-line bg-bg2 p-6 transition-all hover:border-acc/60"
+            className="flex flex-col justify-between gap-4 rounded-lg border border-line bg-bg2 p-6 sm:p-7 transition-all hover:border-acc/60"
           >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-acc">{step.num}</span>
-              <step.icon className="h-5 w-5 text-mut" />
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-mono text-xs sm:text-sm font-bold text-acc">
+                  {step.num}
+                </span>
+                <step.icon className="h-6 w-6 text-mut" />
+              </div>
+              <h3 className="font-serif text-xl sm:text-2xl font-normal text-fg mb-2">
+                {step.title}
+              </h3>
+              <p className="text-sm sm:text-base leading-relaxed text-mut">
+                {step.desc}
+              </p>
             </div>
-            <h3 className="font-serif text-xl font-normal">{step.title}</h3>
-            <p className="text-xs leading-relaxed text-mut">{step.desc}</p>
           </div>
         ))}
       </div>
