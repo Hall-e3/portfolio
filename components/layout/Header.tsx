@@ -9,6 +9,7 @@ import avatar from "@/public/enoch.jpeg";
 
 const NAV_LINKS = [
   { href: "/#services", label: "Services" },
+  { href: "/#methodology", label: "Methodology" },
   { href: "/work", label: "Work" },
   { href: "/#skills", label: "Stack" },
   { href: "/#contact", label: "Contact" },
@@ -43,7 +44,7 @@ export default function Header() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-line bg-bg2 text-fg md:hidden"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-line bg-bg2 text-fg md:hidden cursor-pointer"
           >
             {menuOpen ? <XMarkIcon className="h-4 w-4" /> : <Bars3Icon className="h-4 w-4" />}
           </button>
