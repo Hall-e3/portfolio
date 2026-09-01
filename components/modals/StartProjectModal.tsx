@@ -51,50 +51,44 @@ export default function StartProjectModal() {
       open={startProjectOpen}
       onClose={closeStartProject}
       ariaLabel="Start a project"
-      widthClassName="max-w-[560px] max-h-[88vh] overflow-y-auto"
+      widthClassName="max-w-[520px] max-h-[86vh] overflow-y-auto"
     >
-      <div className="mb-3 flex items-start justify-between">
-        <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-acc uppercase">
-          Start a project
-        </span>
-        <button
-          onClick={closeStartProject}
-          aria-label="Close"
-          className="flex h-7 w-7 items-center justify-center rounded-full border border-line bg-bg hover:border-acc hover:text-acc transition-colors text-mut cursor-pointer"
-        >
-          <XMarkIcon className="h-4 w-4" />
+      <div className="mb-2 flex items-start justify-between">
+        <span className="font-mono text-[11px] tracking-wider text-acc uppercase font-semibold">Start a project</span>
+        <button onClick={closeStartProject} aria-label="Close" className="text-mut hover:text-fg cursor-pointer">
+          <XMarkIcon className="h-[18px] w-[18px]" />
         </button>
       </div>
-      <h3 className="mb-2 font-serif text-2xl sm:text-3xl leading-tight font-normal text-fg">
+      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal text-fg">
         Tell me what we&rsquo;re building.
       </h3>
-      <p className="mb-5 text-sm sm:text-base leading-relaxed text-mut">
+      <p className="mb-5 text-[13px] leading-relaxed text-mut">
         To scope your project accurately and respond with a realistic quote and timeline, please include the
         following in your email:
       </p>
-      <div className="mb-6 flex flex-col gap-3.5">
+      <div className="mb-5.5 flex flex-col gap-3">
         {CHECKLIST.map((item) => (
-          <div key={item.num} className="flex gap-4 rounded-lg border border-line bg-bg p-4 sm:p-4.5">
-            <span className="pt-0.5 font-mono text-xs sm:text-sm font-bold text-acc">{item.num}</span>
+          <div key={item.num} className="flex gap-3.5 rounded-md border border-line bg-bg px-4 py-3.5">
+            <span className="pt-0.5 font-mono text-xs font-bold text-acc">{item.num}</span>
             <div>
-              <div className="mb-1 flex items-center gap-2 text-base font-semibold text-fg">
+              <div className="mb-0.5 flex items-center gap-2 text-sm font-semibold text-fg">
                 <span>{item.title}</span>
-                <span className="rounded-md bg-acc-soft px-2.5 py-0.5 font-mono text-xs font-bold tracking-wider text-acc uppercase">
+                <span className="rounded-md bg-acc-soft px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wider text-acc uppercase">
                   {item.tag}
                 </span>
               </div>
-              <div className="text-xs sm:text-sm leading-relaxed text-mut">{item.desc}</div>
+              <div className="text-[12.5px] leading-snug text-mut">{item.desc}</div>
             </div>
           </div>
         ))}
       </div>
-      <p className="mb-5 font-mono text-xs sm:text-sm leading-relaxed text-mut">
+      <p className="mb-4.5 font-mono text-[11px] leading-relaxed text-mut">
         Attach documents as PDF or a shared link (Google Docs, Notion, Figma). I reply within 2 business days with
         an assessment, quote, and proposed timeline.
       </p>
       <button
         onClick={handleCompose}
-        className="w-full rounded-md bg-acc py-3.5 font-mono text-xs sm:text-sm font-semibold text-bg transition-all hover:opacity-90 cursor-pointer shadow-sm"
+        className="w-full rounded-md bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90 cursor-pointer shadow-sm"
       >
         Compose the email
       </button>

@@ -12,7 +12,7 @@ export default function Hero() {
   const { content: c } = useContentStore();
 
   return (
-    <section className="animate-pf-up py-20 sm:py-24">
+    <section className="animate-pf-up py-24 sm:py-28">
       <Image
         src={avatar}
         alt={c.name}
@@ -20,45 +20,45 @@ export default function Hero() {
         className="mb-6 h-20 w-20 rounded-full border border-line object-cover sm:h-24 sm:w-24"
       />
       {availableForWork && (
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-acc px-4 py-1.5 font-mono text-xs sm:text-sm tracking-wider text-acc uppercase font-semibold">
-          <span className="animate-pf-pulse h-2 w-2 rounded-full bg-acc" />
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-acc px-3.5 py-1.5 font-mono text-[11px] tracking-wider text-acc uppercase">
+          <span className="animate-pf-pulse h-1.5 w-1.5 rounded-full bg-acc" />
           Open to roles &amp; freelance work
         </div>
       )}
-      <div className="mb-4 font-mono text-xs sm:text-sm font-semibold tracking-widest text-mut uppercase">
+      <div className="mb-5 font-mono text-xs tracking-widest text-mut uppercase">
         {c.role} · {c.location}
       </div>
-      <h1 className="mb-6 max-w-4xl font-serif text-[clamp(40px,6vw,72px)] leading-[1.08] font-normal text-fg text-wrap-pretty">
+      <h1 className="mb-7 max-w-225 font-serif text-[clamp(44px,6.5vw,76px)] leading-[1.06] font-normal text-wrap-pretty">
         {c.headline}
       </h1>
-      <p className="mb-8 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-mut">{c.summary}</p>
-      <div className="flex flex-wrap items-center gap-6 font-mono text-xs sm:text-sm">
-        <a href={mailtoHref(c.email)} className="border-b border-acc pb-0.5 text-acc font-semibold cursor-pointer">
+      <p className="mb-9 max-w-150 text-[17px] leading-relaxed text-mut">{c.summary}</p>
+      <div className="flex flex-wrap items-center gap-6 font-mono text-[13px]">
+        <a href={mailtoHref(c.email)} className="border-b border-acc pb-0.5 text-acc">
           {c.email}
         </a>
         <a
           href={c.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-mut hover:text-acc transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1 text-mut hover:text-acc"
         >
-          github <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+          github <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
         </a>
         <a
           href={c.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-mut hover:text-acc transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1 text-mut hover:text-acc"
         >
-          linkedin <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+          linkedin <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
         </a>
         <a
           href={withBasePath("/Hall-Enoch-Asanda-Resume.pdf")}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-mut hover:text-acc transition-colors cursor-pointer"
+          className="inline-flex items-center gap-1 text-mut hover:text-acc"
         >
-          resume <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+          resume <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
         </a>
       </div>
     </section>
