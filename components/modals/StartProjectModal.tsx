@@ -54,12 +54,12 @@ export default function StartProjectModal() {
       widthClassName="max-w-[520px] max-h-[86vh] overflow-y-auto"
     >
       <div className="mb-2 flex items-start justify-between">
-        <span className="font-mono text-[11px] tracking-wider text-acc uppercase">Start a project</span>
-        <button onClick={closeStartProject} aria-label="Close" className="text-mut hover:text-fg">
+        <span className="font-mono text-[11px] tracking-wider text-acc uppercase font-semibold">Start a project</span>
+        <button onClick={closeStartProject} aria-label="Close" className="text-mut hover:text-fg cursor-pointer">
           <XMarkIcon className="h-[18px] w-[18px]" />
         </button>
       </div>
-      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal">
+      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal text-fg">
         Tell me what we&rsquo;re building.
       </h3>
       <p className="mb-5 text-[13px] leading-relaxed text-mut">
@@ -69,11 +69,11 @@ export default function StartProjectModal() {
       <div className="mb-5.5 flex flex-col gap-3">
         {CHECKLIST.map((item) => (
           <div key={item.num} className="flex gap-3.5 rounded-md border border-line bg-bg px-4 py-3.5">
-            <span className="pt-0.5 font-mono text-xs text-acc">{item.num}</span>
+            <span className="pt-0.5 font-mono text-xs font-bold text-acc">{item.num}</span>
             <div>
-              <div className="mb-0.5 flex items-center gap-2 text-sm font-semibold">
+              <div className="mb-0.5 flex items-center gap-2 text-sm font-semibold text-fg">
                 <span>{item.title}</span>
-                <span className="rounded-md bg-acc-soft px-2 py-0.5 font-mono text-[10px] font-medium tracking-wider text-acc uppercase">
+                <span className="rounded-md bg-acc-soft px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wider text-acc uppercase">
                   {item.tag}
                 </span>
               </div>
@@ -88,7 +88,7 @@ export default function StartProjectModal() {
       </p>
       <button
         onClick={handleCompose}
-        className="w-full rounded-md bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90"
+        className="w-full rounded-md bg-acc py-3.5 font-mono text-[13px] font-semibold text-bg transition-all hover:opacity-90 cursor-pointer shadow-sm"
       >
         Compose the email
       </button>

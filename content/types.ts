@@ -6,8 +6,43 @@ export interface Service {
   cta: string;
 }
 
+export interface ProjectChallenge {
+  title: string;
+  problem: string;
+  solution: string;
+}
+
+export interface ProjectMilestone {
+  phase: string;
+  duration: string;
+  deliverables: string;
+}
+
+export interface ProjectArchitecture {
+  overview: string;
+  frontend?: string;
+  backend?: string;
+  database?: string;
+  infrastructure?: string;
+  highlights?: string[];
+}
+
+export interface ProjectSDLC {
+  methodology: string;
+  planningAndThoughts: string;
+  qualityAssurance: string;
+  deploymentStrategy: string;
+}
+
+export interface ProjectMaintenanceAvailability {
+  status: string;
+  clientCommitment: string;
+  availabilityNotice: string;
+}
+
 export interface Project {
   id: number;
+  slug?: string;
   title: string;
   year: string;
   platform: string;
@@ -19,6 +54,13 @@ export interface Project {
   thumb?: string;
   tech: string[];
   desc: string;
+  tagline?: string;
+  architecture?: ProjectArchitecture;
+  sdlc?: ProjectSDLC;
+  challenges?: ProjectChallenge[];
+  timeline?: ProjectMilestone[];
+  proposalScope?: string;
+  maintenanceAndAvailability?: ProjectMaintenanceAvailability;
 }
 
 export interface SkillGroup {
@@ -48,3 +90,4 @@ export type HeroFields = Omit<SiteContent, "services" | "projects" | "skills">;
 export type Theme = "dark" | "light";
 
 export type ProjectFilter = "all" | "web" | "mobile" | "full stack";
+

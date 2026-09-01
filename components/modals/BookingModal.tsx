@@ -60,16 +60,16 @@ export default function BookingModal() {
     <Modal open={open} onClose={closeBooking} ariaLabel={`Book ${context}`}>
       <div className="mb-2 flex items-start justify-between">
         <span className="font-mono text-[11px] tracking-wider text-acc uppercase">Book · {context}</span>
-        <button onClick={closeBooking} aria-label="Close" className="text-mut hover:text-fg">
+        <button onClick={closeBooking} aria-label="Close" className="text-mut hover:text-fg cursor-pointer">
           <XMarkIcon className="h-[18px] w-[18px]" />
         </button>
       </div>
-      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal">How would you like to meet?</h3>
+      <h3 className="mb-1.5 font-serif text-[28px] leading-tight font-normal text-fg">How would you like to meet?</h3>
       <p className="mb-4.5 text-[13px] leading-relaxed text-mut">{bookingBlurb(context)}</p>
       <div className="mb-4.5 flex flex-col gap-2 rounded-md border border-line bg-bg px-4 py-3.5">
         {bookingDetails(context).map((d) => (
           <div key={d.k} className="flex items-center gap-3 text-[12.5px] leading-snug">
-            <span className="min-w-[88px] rounded-md bg-acc-soft px-2 py-0.5 text-center font-mono text-[10.5px] font-medium tracking-wider text-acc uppercase">
+            <span className="min-w-[88px] rounded-md bg-acc-soft px-2 py-0.5 text-center font-mono text-[10.5px] font-semibold tracking-wider text-acc uppercase">
               {d.k}
             </span>
             <span className="text-mut">{d.v}</span>
@@ -81,11 +81,11 @@ export default function BookingModal() {
           <button
             key={opt.key}
             onClick={opt.onPick}
-            className="flex items-center gap-3.5 rounded-md border border-line bg-bg px-4.5 py-4 text-left transition-colors hover:border-acc"
+            className="flex items-center gap-3.5 rounded-md border border-line bg-bg px-4.5 py-4 text-left transition-colors hover:border-acc cursor-pointer"
           >
             <opt.icon className="h-6 w-6 shrink-0 text-acc" />
             <span className="flex flex-col gap-0.5">
-              <span className="text-[15px] font-semibold">{opt.name}</span>
+              <span className="text-[15px] font-semibold text-fg">{opt.name}</span>
               <span className="font-mono text-[11px] text-mut">{opt.note}</span>
             </span>
             <ArrowRightIcon className="ml-auto h-4 w-4 text-acc" />
