@@ -30,7 +30,7 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hallenochasanda.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hall-e3.github.io/portfolio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

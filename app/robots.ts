@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hallenochasanda.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hall-e3.github.io/portfolio";
 
   return {
     rules: {
