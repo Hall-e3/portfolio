@@ -9,7 +9,7 @@ import avatar from "@/public/enoch.jpeg";
 
 const NAV_LINKS = [
   { href: "/#services", label: "Services" },
-  { href: "/#methodology", label: "Methodology" },
+  { href: "/methodology", label: "Methodology" },
   { href: "/work", label: "Work" },
   { href: "/#skills", label: "Stack" },
   { href: "/#contact", label: "Contact" },

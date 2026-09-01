@@ -25,8 +25,8 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="py-12 pb-10">
-      <div className="mb-9 flex items-baseline justify-between border-b border-fg pb-3.5">
+    <section className="py-10 pb-8">
+      <div className="mb-9 flex items-baseline justify-between border-b border-line pb-3.5">
         <h2 className="font-mono text-xs font-medium tracking-widest uppercase">How I Work</h2>
         <span className="font-mono text-xs text-mut">From concept to production</span>
       </div>
