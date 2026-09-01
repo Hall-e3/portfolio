@@ -100,6 +100,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "google56116aa41b1afc16",
+  },
 };
 
 const jsonLd = {
