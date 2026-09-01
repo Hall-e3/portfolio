@@ -13,6 +13,9 @@ interface ModalContextValue {
   selectedProject: Project | null;
   openProjectDetail: (project: Project) => void;
   closeProjectDetail: () => void;
+  playbookOpen: boolean;
+  openPlaybook: () => void;
+  closePlaybook: () => void;
 }
 
 const ModalContext = createContext<ModalContextValue | null>(null);
@@ -21,6 +24,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   const [bookingContext, setBookingContext] = useState<string | null>(null);
   const [startProjectOpen, setStartProjectOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [playbookOpen, setPlaybookOpen] = useState(false);
 
   const openBooking = useCallback((context: string) => setBookingContext(context), []);
   const closeBooking = useCallback(() => setBookingContext(null), []);
@@ -28,6 +32,8 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
   const closeStartProject = useCallback(() => setStartProjectOpen(false), []);
   const openProjectDetail = useCallback((project: Project) => setSelectedProject(project), []);
   const closeProjectDetail = useCallback(() => setSelectedProject(null), []);
+  const openPlaybook = useCallback(() => setPlaybookOpen(true), []);
+  const closePlaybook = useCallback(() => setPlaybookOpen(false), []);
 
   const value = useMemo(
     () => ({
@@ -40,6 +46,9 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
       selectedProject,
       openProjectDetail,
       closeProjectDetail,
+      playbookOpen,
+      openPlaybook,
+      closePlaybook,
     }),
     [
       bookingContext,
@@ -51,6 +60,9 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
       selectedProject,
       openProjectDetail,
       closeProjectDetail,
+      playbookOpen,
+      openPlaybook,
+      closePlaybook,
     ]
   );
 
@@ -62,4 +74,3 @@ export function useModals(): ModalContextValue {
   if (!ctx) throw new Error("useModals must be used within a ModalProvider");
   return ctx;
 }
-

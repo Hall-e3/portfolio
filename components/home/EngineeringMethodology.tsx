@@ -5,6 +5,7 @@ import {
   ArrowRightIcon,
   BeakerIcon,
   BoltIcon,
+  BookOpenIcon,
   CheckCircleIcon,
   ClipboardDocumentCheckIcon,
   CodeBracketIcon,
@@ -17,6 +18,7 @@ import {
   SparklesIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
+import { useModals } from "@/lib/modal-context";
 
 const PILLARS = [
   {
@@ -131,13 +133,19 @@ const PILLARS = [
 
 export default function EngineeringMethodology() {
   const [selectedPillarId, setSelectedPillarId] = useState<string>("tdd");
+  const { openPlaybook } = useModals();
 
   const activePillar = PILLARS.find((p) => p.id === selectedPillarId) || PILLARS[0];
+
+  function handleSelectPillar(id: string) {
+    setSelectedPillarId(id);
+    document.getElementById("playbook-deep-dive")?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <section id="methodology" className="py-12 pb-14 border-t border-line">
       {/* Header */}
-      <div className="mb-9 flex flex-col sm:flex-row sm:items-end justify-between border-b border-line pb-4 gap-2">
+      <div className="mb-9 flex flex-col md:flex-row md:items-end justify-between border-b border-line pb-4 gap-4">
         <div>
           <span className="font-mono text-xs font-semibold tracking-widest text-acc uppercase block mb-1">
             SDLC Rigor &amp; Software Architecture
@@ -146,9 +154,14 @@ export default function EngineeringMethodology() {
             Engineering Methodology &amp; System Philosophy
           </h2>
         </div>
-        <p className="font-mono text-xs text-mut max-w-md">
-          A first-principles approach: Test-Driven Development (TDD), Cypress E2E automation, failure-aware UI design, and pragmatic AI acceleration.
-        </p>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={openPlaybook}
+            className="inline-flex items-center gap-2 rounded-md bg-acc px-4 py-2.5 font-mono text-xs font-semibold text-bg transition-all hover:opacity-90 cursor-pointer shadow-sm shrink-0"
+          >
+            <BookOpenIcon className="h-4 w-4 text-bg" /> Read Full Playbook &amp; Manifesto
+          </button>
+        </div>
       </div>
 
       {/* Grid of 6 Pillars */}
@@ -160,7 +173,7 @@ export default function EngineeringMethodology() {
           return (
             <div
               key={pillar.id}
-              onClick={() => setSelectedPillarId(pillar.id)}
+              onClick={() => handleSelectPillar(pillar.id)}
               className={`flex flex-col justify-between rounded-lg border p-6 transition-all cursor-pointer ${
                 isSelected
                   ? "border-acc bg-acc-soft/30 shadow-md"
@@ -191,7 +204,7 @@ export default function EngineeringMethodology() {
       </div>
 
       {/* Detailed Playbook Viewer Box */}
-      <div className="mt-8 rounded-lg border border-line bg-bg2 p-6 sm:p-8">
+      <div id="playbook-deep-dive" className="mt-8 rounded-lg border border-line bg-bg2 p-6 sm:p-8 scroll-mt-24">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4 mb-5">
           <div className="flex items-center gap-3">
             <activePillar.icon className="h-6 w-6 text-acc" />
@@ -202,7 +215,14 @@ export default function EngineeringMethodology() {
               <h3 className="font-serif text-2xl font-normal text-fg">{activePillar.deepDive.heading}</h3>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={openPlaybook}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-xs rounded-md bg-acc-soft text-acc font-semibold border border-acc/40 hover:bg-acc hover:text-bg transition-colors cursor-pointer mr-1"
+            >
+              <BookOpenIcon className="h-3.5 w-3.5" /> Full Reader Modal
+            </button>
+
             {PILLARS.map((p) => (
               <button
                 key={p.id}
@@ -234,12 +254,12 @@ export default function EngineeringMethodology() {
             <BeakerIcon className="h-4 w-4 text-acc" />
             <span>Guaranteed Test Coverage &amp; Clean Architecture on Every Deliverable</span>
           </div>
-          <a
-            href="#contact"
+          <button
+            onClick={openPlaybook}
             className="inline-flex items-center gap-1.5 text-acc hover:underline font-semibold cursor-pointer"
           >
-            Discuss Engineering Requirements <ArrowRightIcon className="h-3.5 w-3.5" />
-          </a>
+            Read Complete Engineering Manifesto <ArrowRightIcon className="h-3.5 w-3.5" />
+          </button>
         </div>
       </div>
     </section>
