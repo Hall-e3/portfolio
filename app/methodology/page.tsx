@@ -5,9 +5,14 @@ import EngineeringMethodology from "@/components/home/EngineeringMethodology";
 import Process from "@/components/home/Process";
 
 export const metadata: Metadata = {
-  title: "How I Work & Engineering Methodology — Hall Enoch Asanda",
+  title: "Engineering Methodology & SDLC Workflow",
   description:
     "End-to-end SDLC workflow, Test-Driven Development (TDD), Cypress E2E automation, failure-aware UI design, strategic dependency management, and pragmatic AI acceleration.",
+  openGraph: {
+    title: "Engineering Methodology & Systems Rigor | Hall Enoch Asanda",
+    description:
+      "Detailed overview of SDLC rigor, TDD testing, Cypress E2E automation, idempotency, and full-stack software architecture.",
+  },
 };
 
 export default function MethodologyPage() {
