@@ -1,8 +1,20 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useSyncExternalStore,
+} from "react";
 import { defaultContent } from "@/content/site-content";
-import type { HeroFields, Project, Service, SiteContent, SkillGroup } from "@/content/types";
+import type {
+  HeroFields,
+  Project,
+  Service,
+  SiteContent,
+  SkillGroup,
+} from "@/content/types";
 
 const STORAGE_KEY = "hall-pf-content-v1";
 const CHANGE_EVENT = "pf-content-changed";
@@ -18,7 +30,6 @@ function readRaw(): string | null {
   }
 }
 
-/** Module-level cache so repeated reads return a stable reference for useSyncExternalStore. */
 function getSnapshot(): SiteContent {
   const raw = readRaw();
   if (raw !== cachedRaw) {
@@ -28,7 +39,12 @@ function getSnapshot(): SiteContent {
         const parsed = JSON.parse(raw);
         const mergedProjects = [...(parsed.projects || [])];
         for (const defaultProj of defaultContent.projects) {
-          if (!mergedProjects.some((p: Project) => p.id === defaultProj.id || p.title === defaultProj.title)) {
+          if (
+            !mergedProjects.some(
+              (p: Project) =>
+                p.id === defaultProj.id || p.title === defaultProj.title,
+            )
+          ) {
             mergedProjects.unshift(defaultProj);
           }
         }
@@ -106,8 +122,16 @@ interface ContentStoreValue {
 
 const ContentStoreContext = createContext<ContentStoreValue | null>(null);
 
-export function ContentStoreProvider({ children }: { children: React.ReactNode }) {
-  const content = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+export function ContentStoreProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const content = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
 
   const mutate = useCallback((updater: (prev: SiteContent) => SiteContent) => {
     writeContent(updater(getSnapshot()));
@@ -115,54 +139,78 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
 
   const updateHero = useCallback(
     (patch: Partial<HeroFields>) => mutate((prev) => ({ ...prev, ...patch })),
-    [mutate]
+    [mutate],
   );
 
   const upsertService = useCallback(
     (service: Service) =>
       mutate((prev) => ({
         ...prev,
-        services: upsertById(prev.services, service.id ? service : { ...service, id: nextIdFor(prev.services) }),
+        services: upsertById(
+          prev.services,
+          service.id ? service : { ...service, id: nextIdFor(prev.services) },
+        ),
       })),
-    [mutate]
+    [mutate],
   );
 
   const deleteService = useCallback(
-    (id: number) => mutate((prev) => ({ ...prev, services: prev.services.filter((s) => s.id !== id) })),
-    [mutate]
+    (id: number) =>
+      mutate((prev) => ({
+        ...prev,
+        services: prev.services.filter((s) => s.id !== id),
+      })),
+    [mutate],
   );
 
   const upsertProject = useCallback(
     (project: Project) =>
       mutate((prev) => ({
         ...prev,
-        projects: upsertById(prev.projects, project.id ? project : { ...project, id: nextIdFor(prev.projects) }),
+        projects: upsertById(
+          prev.projects,
+          project.id ? project : { ...project, id: nextIdFor(prev.projects) },
+        ),
       })),
-    [mutate]
+    [mutate],
   );
 
   const deleteProject = useCallback(
-    (id: number) => mutate((prev) => ({ ...prev, projects: prev.projects.filter((p) => p.id !== id) })),
-    [mutate]
+    (id: number) =>
+      mutate((prev) => ({
+        ...prev,
+        projects: prev.projects.filter((p) => p.id !== id),
+      })),
+    [mutate],
   );
 
   const upsertSkillGroup = useCallback(
     (group: SkillGroup) =>
       mutate((prev) => ({
         ...prev,
-        skills: upsertById(prev.skills, group.id ? group : { ...group, id: nextIdFor(prev.skills) }),
+        skills: upsertById(
+          prev.skills,
+          group.id ? group : { ...group, id: nextIdFor(prev.skills) },
+        ),
       })),
-    [mutate]
+    [mutate],
   );
 
   const deleteSkillGroup = useCallback(
-    (id: number) => mutate((prev) => ({ ...prev, skills: prev.skills.filter((s) => s.id !== id) })),
-    [mutate]
+    (id: number) =>
+      mutate((prev) => ({
+        ...prev,
+        skills: prev.skills.filter((s) => s.id !== id),
+      })),
+    [mutate],
   );
 
   const resetContent = useCallback(() => clearContent(), []);
 
-  const exportJSON = useCallback(() => JSON.stringify(content, null, 2), [content]);
+  const exportJSON = useCallback(
+    () => JSON.stringify(content, null, 2),
+    [content],
+  );
 
   const importJSON = useCallback(
     (json: string) => {
@@ -174,7 +222,7 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
         return false;
       }
     },
-    [mutate]
+    [mutate],
   );
 
   const value = useMemo<ContentStoreValue>(
@@ -203,14 +251,21 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
       resetContent,
       exportJSON,
       importJSON,
-    ]
+    ],
   );
 
-  return <ContentStoreContext.Provider value={value}>{children}</ContentStoreContext.Provider>;
+  return (
+    <ContentStoreContext.Provider value={value}>
+      {children}
+    </ContentStoreContext.Provider>
+  );
 }
 
 export function useContentStore(): ContentStoreValue {
   const ctx = useContext(ContentStoreContext);
-  if (!ctx) throw new Error("useContentStore must be used within a ContentStoreProvider");
+  if (!ctx)
+    throw new Error(
+      "useContentStore must be used within a ContentStoreProvider",
+    );
   return ctx;
 }

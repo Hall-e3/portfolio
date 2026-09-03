@@ -46,14 +46,21 @@ export const defaultContent: SiteContent = {
       link: "https://salad-treat-ug.vercel.app/",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zod", "Heroicons"],
       desc: "Modern digital platform and interactive ordering engine for Kampala's leading fresh salad subscription brand. Features curated weekly/monthly meal plans, signature bowls, an interactive Custom Bowl Builder, local UGX price calculations, and instant WhatsApp order dispatch.",
-      tagline: "High-Conversion Meal Subscription Platform & Interactive Bowl Builder",
-      proposalScope: "Designed and engineered an end-to-end proposal platform featuring dynamic meal subscription management, fluid mobile swiping UX, Zod-validated data schemas, and zero-friction WhatsApp checkout.",
+      tagline:
+        "High-Conversion Meal Subscription Platform & Interactive Bowl Builder",
+      proposalScope:
+        "Designed and engineered an end-to-end proposal platform featuring dynamic meal subscription management, fluid mobile swiping UX, Zod-validated data schemas, and zero-friction WhatsApp checkout.",
       architecture: {
-        overview: "Built using Next.js App Router and TypeScript, modularized around clean feature domain boundaries with Zod payload validation and responsive mobile-first typography.",
-        frontend: "Next.js App Router, TypeScript, Tailwind CSS, custom design tokens, fluid swipe tabs, and accessible UI controls.",
-        backend: "Static & serverless prerendering architecture with WhatsApp API integration for instant order payload transmission.",
-        database: "Typed JSON domain datasets enforcing strict Zod schemas for meal plans, signature bowls, and custom ingredients.",
-        infrastructure: "Vercel Edge Network deployment with sub-second page performance.",
+        overview:
+          "Built using Next.js App Router and TypeScript, modularized around clean feature domain boundaries with Zod payload validation and responsive mobile-first typography.",
+        frontend:
+          "Next.js App Router, TypeScript, Tailwind CSS, custom design tokens, fluid swipe tabs, and accessible UI controls.",
+        backend:
+          "Static & serverless prerendering architecture with WhatsApp API integration for instant order payload transmission.",
+        database:
+          "Typed JSON domain datasets enforcing strict Zod schemas for meal plans, signature bowls, and custom ingredients.",
+        infrastructure:
+          "Vercel Edge Network deployment with sub-second page performance.",
         highlights: [
           "Interactive 4-step Custom Bowl Builder with dynamic UGX price calculator",
           "Fluid mobile swipe navigation with non-intrusive inline helper guidance",
@@ -62,32 +69,56 @@ export const defaultContent: SiteContent = {
         ],
       },
       sdlc: {
-        methodology: "Rapid Value-Driven Design & Interactive Proposal Development.",
-        planningAndThoughts: "Designed as a high-conversion client proposal to showcase how Salad Treat can modernize their customer ordering experience, eliminate phone order friction, and boost subscription retention across Kampala.",
-        qualityAssurance: "Strict TypeScript type checking, Zod runtime schema validation, static build prerendering verification, and multi-device mobile UX testing.",
-        deploymentStrategy: "Production edge deployment on Vercel with automated Git continuous integration.",
+        methodology:
+          "Rapid Value-Driven Design & Interactive Proposal Development.",
+        planningAndThoughts:
+          "Designed as a high-conversion client proposal to showcase how Salad Treat can modernize their customer ordering experience, eliminate phone order friction, and boost subscription retention across Kampala.",
+        qualityAssurance:
+          "Strict TypeScript type checking, Zod runtime schema validation, static build prerendering verification, and multi-device mobile UX testing.",
+        deploymentStrategy:
+          "Production edge deployment on Vercel with automated Git continuous integration.",
       },
       challenges: [
         {
           title: "Complex Multi-Step Customization Without Order Friction",
-          problem: "Customers needed to choose bases, proteins, toppings, and dressings with live pricing without feeling overwhelmed by a complex form.",
-          solution: "Architected a progressive 4-step Custom Bowl Builder with active progress feedback, live UGX total calculations, and single-click WhatsApp checkout.",
+          problem:
+            "Customers needed to choose bases, proteins, toppings, and dressings with live pricing without feeling overwhelmed by a complex form.",
+          solution:
+            "Architected a progressive 4-step Custom Bowl Builder with active progress feedback, live UGX total calculations, and single-click WhatsApp checkout.",
         },
         {
           title: "Mobile Navigation & Micro-Interactions",
-          problem: "Category tabs were crowded on mobile screens, leading to layout shift and poor user experience.",
-          solution: "Implemented horizontal swipeable tabs with hidden scrollbars and inline context guidance banners.",
+          problem:
+            "Category tabs were crowded on mobile screens, leading to layout shift and poor user experience.",
+          solution:
+            "Implemented horizontal swipeable tabs with hidden scrollbars and inline context guidance banners.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: Brand Strategy & UI Design", duration: "Days 1–2", deliverables: "Custom vegetable heart branding, responsive typography hierarchy, color tokens." },
-        { phase: "Phase 2: Core Engineering & Custom Builder", duration: "Days 3–5", deliverables: "Next.js storefront, 4-step builder, WhatsApp integration, Zod schema validation." },
-        { phase: "Phase 3: Optimization & Vercel Deployment", duration: "Days 6–7", deliverables: "Live release at salad-treat-ug.vercel.app with edge optimization." },
+        {
+          phase: "Phase 1: Brand Strategy & UI Design",
+          duration: "Days 1–2",
+          deliverables:
+            "Custom vegetable heart branding, responsive typography hierarchy, color tokens.",
+        },
+        {
+          phase: "Phase 2: Core Engineering & Custom Builder",
+          duration: "Days 3–5",
+          deliverables:
+            "Next.js storefront, 4-step builder, WhatsApp integration, Zod schema validation.",
+        },
+        {
+          phase: "Phase 3: Optimization & Vercel Deployment",
+          duration: "Days 6–7",
+          deliverables:
+            "Live release at salad-treat-ug.vercel.app with edge optimization.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live Proposal Site",
         clientCommitment: "Fully operational web application hosted on Vercel.",
-        availabilityNotice: "🟢 Available for full-stack web applications, custom subscription platforms, and client digital modernizations.",
+        availabilityNotice:
+          "Available for full-stack web applications, custom subscription platforms, and client digital modernizations.",
       },
     },
     {
@@ -100,14 +131,21 @@ export const defaultContent: SiteContent = {
       link: "https://behurryug.com/",
       tech: ["Nestjs", "Typeorm", "Nextjs", "Postgresql", "Turborepo"],
       desc: "A full-stack loan management platform built for microfinance operations, handling the complete loan lifecycle from client onboarding through disbursement, repayment tracking, and cash reconciliation. Built as a pnpm/Turborepo monorepo with three applications sharing a common design system and type library.",
-      tagline: "Enterprise Monorepo Loan Lifecycle & Cash Reconciliation System",
-      proposalScope: "Delivered a multi-app monorepo system comprising an Admin Dashboard, Client Portal, and Field Officer interface, complete with cash reconciliation algorithms and audit logs.",
+      tagline:
+        "Enterprise Monorepo Loan Lifecycle & Cash Reconciliation System",
+      proposalScope:
+        "Delivered a multi-app monorepo system comprising an Admin Dashboard, Client Portal, and Field Officer interface, complete with cash reconciliation algorithms and audit logs.",
       architecture: {
-        overview: "Architected as a pnpm/Turborepo monorepo sharing core DTOs, validation schemas, and `@behurry/ui` component packages across 3 web applications. Powered by NestJS, TypeORM, and PostgreSQL on the backend, and Next.js App Router on the frontend.",
-        frontend: "Next.js App Router (TypeScript) with TanStack Query for state synchronization, custom virtualized financial tables, and atomic Tailwind CSS components.",
-        backend: "NestJS microservices with domain-driven design, TypeORM entities, and PostgreSQL with strict transactional isolation to guarantee financial ledger integrity.",
-        database: "PostgreSQL relational database with indexed query plans for fast loan reporting, daily session balance tracking, and immutable audit logs.",
-        infrastructure: "Dockerized container deployment with GitHub Actions CI/CD pipelines and zero-downtime database migration scripts.",
+        overview:
+          "Architected as a pnpm/Turborepo monorepo sharing core DTOs, validation schemas, and `@behurry/ui` component packages across 3 web applications. Powered by NestJS, TypeORM, and PostgreSQL on the backend, and Next.js App Router on the frontend.",
+        frontend:
+          "Next.js App Router (TypeScript) with TanStack Query for state synchronization, custom virtualized financial tables, and atomic Tailwind CSS components.",
+        backend:
+          "NestJS microservices with domain-driven design, TypeORM entities, and PostgreSQL with strict transactional isolation to guarantee financial ledger integrity.",
+        database:
+          "PostgreSQL relational database with indexed query plans for fast loan reporting, daily session balance tracking, and immutable audit logs.",
+        infrastructure:
+          "Dockerized container deployment with GitHub Actions CI/CD pipelines and zero-downtime database migration scripts.",
         highlights: [
           "Atomic daily session closing balances to prevent capital cross-day carryover errors",
           "Shared monorepo type system ensuring 100% contract alignment between frontend & backend",
@@ -116,33 +154,63 @@ export const defaultContent: SiteContent = {
         ],
       },
       sdlc: {
-        methodology: "Domain-Driven Agile SDLC (2-week Sprints) with bi-weekly stakeholder reviews.",
-        planningAndThoughts: "Before starting implementation, I mapped out the entire microfinance financial domain—identifying critical race conditions during cash reconciliation and daily closing. I designed strict finite state machine transitions for loan statuses (Draft -> Under Review -> Approved -> Disbursed -> Active -> Repaid / Defaulted) to guarantee operational consistency.",
-        qualityAssurance: "Strict TypeScript strict mode, Zod runtime payload validation, Jest unit tests for interest calculation formulas, and manual end-to-end sanity testing on all financial workflows.",
-        deploymentStrategy: "Monorepo CI build verification, automated database schema migration checks, and seamless static deployment on production CDNs.",
+        methodology:
+          "Domain-Driven Agile SDLC (2-week Sprints) with bi-weekly stakeholder reviews.",
+        planningAndThoughts:
+          "Before starting implementation, I mapped out the entire microfinance financial domain—identifying critical race conditions during cash reconciliation and daily closing. I designed strict finite state machine transitions for loan statuses (Draft -> Under Review -> Approved -> Disbursed -> Active -> Repaid / Defaulted) to guarantee operational consistency.",
+        qualityAssurance:
+          "Strict TypeScript strict mode, Zod runtime payload validation, Jest unit tests for interest calculation formulas, and manual end-to-end sanity testing on all financial workflows.",
+        deploymentStrategy:
+          "Monorepo CI build verification, automated database schema migration checks, and seamless static deployment on production CDNs.",
       },
       challenges: [
         {
           title: "Cross-Day Financial Capital Carryover Errors",
-          problem: "Legacy financial systems suffered from ledger leakage where walk-in cash transactions and unassigned loan disbursements bled into subsequent business day reports.",
-          solution: "Implemented an atomic 'Open New Day' session locking workflow that captures the previous day's closing balance immutably and enforces strict session boundary locks on all transactions.",
+          problem:
+            "Legacy financial systems suffered from ledger leakage where walk-in cash transactions and unassigned loan disbursements bled into subsequent business day reports.",
+          solution:
+            "Implemented an atomic 'Open New Day' session locking workflow that captures the previous day's closing balance immutably and enforces strict session boundary locks on all transactions.",
         },
         {
           title: "Monorepo Code Duplication Across 3 Applications",
-          problem: "Maintaining separate form validations and table components across Admin, Client, and Officer apps threatened to create UI drift and double maintenance work.",
-          solution: "Extracted all shared form controls, validation rules, and design tokens into `@behurry/ui` and `@behurry/common` monorepo packages, enabling single-source-of-truth component reuse.",
+          problem:
+            "Maintaining separate form validations and table components across Admin, Client, and Officer apps threatened to create UI drift and double maintenance work.",
+          solution:
+            "Extracted all shared form controls, validation rules, and design tokens into `@behurry/ui` and `@behurry/common` monorepo packages, enabling single-source-of-truth component reuse.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: Domain Analysis & Monorepo Setup", duration: "Month 1", deliverables: "Financial state machine design, Turborepo setup, database entity modeling." },
-        { phase: "Phase 2: Core Backend API & Shared UI Library", duration: "Months 2–3", deliverables: "NestJS loan lifecycle endpoints, TypeORM migrations, @behurry/ui package." },
-        { phase: "Phase 3: Dashboard & Cash Reconciliation Engine", duration: "Month 4", deliverables: "Admin dashboard, daily closing balance workflow, reporting views." },
-        { phase: "Phase 4: QA, Testing & Production Release", duration: "Month 5", deliverables: "Financial calculation verification, user training, live deployment at behurryug.com." },
+        {
+          phase: "Phase 1: Domain Analysis & Monorepo Setup",
+          duration: "Month 1",
+          deliverables:
+            "Financial state machine design, Turborepo setup, database entity modeling.",
+        },
+        {
+          phase: "Phase 2: Core Backend API & Shared UI Library",
+          duration: "Months 2–3",
+          deliverables:
+            "NestJS loan lifecycle endpoints, TypeORM migrations, @behurry/ui package.",
+        },
+        {
+          phase: "Phase 3: Dashboard & Cash Reconciliation Engine",
+          duration: "Month 4",
+          deliverables:
+            "Admin dashboard, daily closing balance workflow, reporting views.",
+        },
+        {
+          phase: "Phase 4: QA, Testing & Production Release",
+          duration: "Month 5",
+          deliverables:
+            "Financial calculation verification, user training, live deployment at behurryug.com.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Actively Maintained & Operational in Production",
-        clientCommitment: "Ongoing maintenance is handled via structured weekly maintenance windows and automated monitoring, requiring minimal daily intervention.",
-        availabilityNotice: "🟢 Available for new full-stack engineering roles, software architecture contracts, and enterprise monorepo projects without conflict.",
+        clientCommitment:
+          "Ongoing maintenance is handled via structured weekly maintenance windows and automated monitoring, requiring minimal daily intervention.",
+        availabilityNotice:
+          "Available for new full-stack engineering roles, software architecture contracts, and enterprise monorepo projects without conflict.",
       },
     },
     {
@@ -153,18 +221,25 @@ export const defaultContent: SiteContent = {
       status: "Live",
       role: "Frontend · React Native",
       link: "https://ffanquest.com/",
-      playLink: "https://play.google.com/store/apps/details?id=com.ffanquest.app",
+      playLink:
+        "https://play.google.com/store/apps/details?id=com.ffanquest.app",
       appStoreLink: "https://apps.apple.com/us/app/ffan-quest/id6778492248",
       tech: ["React Native", "Expo", "TypeScript", "Maps"],
       desc: "Bus travel platform for one-way, round-trip, and multi-city journeys. Passengers book and track trips live on a map; drivers scan digital tickets and manage manifests.",
       tagline: "Real-Time Multi-City Bus Booking & Live Fleet Tracking App",
-      proposalScope: "Built the cross-platform mobile user interfaces for both passengers and drivers, including interactive seat selection, live map tracking, and offline camera ticket scanning.",
+      proposalScope:
+        "Built the cross-platform mobile user interfaces for both passengers and drivers, including interactive seat selection, live map tracking, and offline camera ticket scanning.",
       architecture: {
-        overview: "Cross-platform mobile application engineered with React Native and Expo, connected to a real-time Node.js backend using WebSockets and Google Maps SDK.",
-        frontend: "React Native with Expo framework, custom vector map overlays, animated marker interpolations, and camera-based QR ticket scanner.",
-        backend: "Node.js REST API with WebSocket event emitters for real-time bus GPS coordinates.",
-        database: "PostgreSQL with spatial indexing for geo-radius passenger route searches.",
-        infrastructure: "Expo Application Services (EAS) for automated iOS & Android app store builds and Over-The-Air (OTA) updates.",
+        overview:
+          "Cross-platform mobile application engineered with React Native and Expo, connected to a real-time Node.js backend using WebSockets and Google Maps SDK.",
+        frontend:
+          "React Native with Expo framework, custom vector map overlays, animated marker interpolations, and camera-based QR ticket scanner.",
+        backend:
+          "Node.js REST API with WebSocket event emitters for real-time bus GPS coordinates.",
+        database:
+          "PostgreSQL with spatial indexing for geo-radius passenger route searches.",
+        infrastructure:
+          "Expo Application Services (EAS) for automated iOS & Android app store builds and Over-The-Air (OTA) updates.",
         highlights: [
           "Live GPS vehicle tracking on interactive maps with smooth position interpolation",
           "Driver QR code digital ticket scanner working in low-connectivity terminal environments",
@@ -172,27 +247,47 @@ export const defaultContent: SiteContent = {
         ],
       },
       sdlc: {
-        methodology: "Iterative Mobile Agile Development with continuous Expo TestFlight builds.",
-        planningAndThoughts: "Analyzed driver environment constraints (low light, intermittent network) versus passenger needs (accurate arrival predictions). Structured offline-first ticket scanning cache to ensure zero boarding delays at bus terminals.",
-        qualityAssurance: "TypeScript interface contracts, physical device testing across iOS and Android models, and automated build verification.",
-        deploymentStrategy: "Expo EAS Build pipelines submitted directly to Apple App Store Connect and Google Play Console.",
+        methodology:
+          "Iterative Mobile Agile Development with continuous Expo TestFlight builds.",
+        planningAndThoughts:
+          "Analyzed driver environment constraints (low light, intermittent network) versus passenger needs (accurate arrival predictions). Structured offline-first ticket scanning cache to ensure zero boarding delays at bus terminals.",
+        qualityAssurance:
+          "TypeScript interface contracts, physical device testing across iOS and Android models, and automated build verification.",
+        deploymentStrategy:
+          "Expo EAS Build pipelines submitted directly to Apple App Store Connect and Google Play Console.",
       },
       challenges: [
         {
           title: "High Battery Consumption & GPS Location Jitter",
-          problem: "Continuous high-frequency GPS tracking on driver phones drained batteries quickly and caused marker jumping on passenger maps.",
-          solution: "Implemented adaptive distance-filtered geolocation updates and velocity smoothing, reducing location payloads by 60% while maintaining smooth map animations.",
+          problem:
+            "Continuous high-frequency GPS tracking on driver phones drained batteries quickly and caused marker jumping on passenger maps.",
+          solution:
+            "Implemented adaptive distance-filtered geolocation updates and velocity smoothing, reducing location payloads by 60% while maintaining smooth map animations.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: UX Wireframes & Map Prototype", duration: "Weeks 1–3", deliverables: "Interactive map prototype, seat selection UI design." },
-        { phase: "Phase 2: Passenger Booking & Driver Scanner", duration: "Weeks 4–8", deliverables: "Ticket generation engine, driver QR scanning module." },
-        { phase: "Phase 3: Beta Testing & Store Publishing", duration: "Weeks 9–12", deliverables: "App Store & Play Store approval and live release." },
+        {
+          phase: "Phase 1: UX Wireframes & Map Prototype",
+          duration: "Weeks 1–3",
+          deliverables: "Interactive map prototype, seat selection UI design.",
+        },
+        {
+          phase: "Phase 2: Passenger Booking & Driver Scanner",
+          duration: "Weeks 4–8",
+          deliverables: "Ticket generation engine, driver QR scanning module.",
+        },
+        {
+          phase: "Phase 3: Beta Testing & Store Publishing",
+          duration: "Weeks 9–12",
+          deliverables: "App Store & Play Store approval and live release.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live on Apple App Store & Google Play Store",
-        clientCommitment: "SLA maintenance managed via automated OTA updates and scheduled feature releases.",
-        availabilityNotice: "🟢 Fully available for new React Native / Expo mobile app projects and contract roles.",
+        clientCommitment:
+          "SLA maintenance managed via automated OTA updates and scheduled feature releases.",
+        availabilityNotice:
+          "Fully available for new React Native / Expo mobile app projects and contract roles.",
       },
     },
     {
@@ -203,15 +298,19 @@ export const defaultContent: SiteContent = {
       status: "Live",
       role: "Frontend · React Native",
       link: "https://epicrealtylistings.com/",
-      playLink: "https://play.google.com/store/apps/details?id=com.epicrealty.app",
+      playLink:
+        "https://play.google.com/store/apps/details?id=com.epicrealty.app",
       appStoreLink: "https://apps.apple.com/us/app/epic-realty/id6763585116",
       tech: ["React Native", "Expo", "Gluestack UI", "TypeScript"],
       desc: "Property rental platform connecting owners and renters. Architected the core structure and component patterns adopted team-wide; shipped to both app stores.",
       tagline: "Multi-Tenant Property Marketplace with Shipped Mobile Apps",
-      proposalScope: "Lead the frontend mobile architecture design, establishing design system token patterns and component conventions for a team of 3 developers.",
+      proposalScope:
+        "Lead the frontend mobile architecture design, establishing design system token patterns and component conventions for a team of 3 developers.",
       architecture: {
-        overview: "Modular React Native mobile application utilizing Gluestack UI for standard accessible styling and Expo for native device capabilities.",
-        frontend: "React Native, Expo, Gluestack UI, TypeScript atomic component design.",
+        overview:
+          "Modular React Native mobile application utilizing Gluestack UI for standard accessible styling and Expo for native device capabilities.",
+        frontend:
+          "React Native, Expo, Gluestack UI, TypeScript atomic component design.",
         highlights: [
           "Team-wide standardized component architecture pattern",
           "Optimized image gallery carousel for property listings",
@@ -220,26 +319,46 @@ export const defaultContent: SiteContent = {
       },
       sdlc: {
         methodology: "Scrum Agile with sprint component reviews.",
-        planningAndThoughts: "Designed reusable UI components early to prevent merge conflicts among team members, enabling fast parallel development.",
-        qualityAssurance: "Snapshot testing with Jest and physical device testing.",
-        deploymentStrategy: "App Store Connect & Google Play Console automated releases.",
+        planningAndThoughts:
+          "Designed reusable UI components early to prevent merge conflicts among team members, enabling fast parallel development.",
+        qualityAssurance:
+          "Snapshot testing with Jest and physical device testing.",
+        deploymentStrategy:
+          "App Store Connect & Google Play Console automated releases.",
       },
       challenges: [
         {
           title: "Memory Spikes During Heavy Listing Carousel Scrolling",
-          problem: "High-resolution property images caused memory growth when users scrolled through long property feeds.",
-          solution: "Implemented windowed list rendering with image memory recycling and dynamic thumbnail downsampling.",
+          problem:
+            "High-resolution property images caused memory growth when users scrolled through long property feeds.",
+          solution:
+            "Implemented windowed list rendering with image memory recycling and dynamic thumbnail downsampling.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: Architecture & Design Tokens", duration: "Month 1", deliverables: "Gluestack UI setup, core component library." },
-        { phase: "Phase 2: Property Search & Listing Engine", duration: "Months 2–3", deliverables: "Listing detail views, filter controls, chat integration." },
-        { phase: "Phase 3: Store Approvals & Launch", duration: "Month 4", deliverables: "App Store and Google Play live publishing." },
+        {
+          phase: "Phase 1: Architecture & Design Tokens",
+          duration: "Month 1",
+          deliverables: "Gluestack UI setup, core component library.",
+        },
+        {
+          phase: "Phase 2: Property Search & Listing Engine",
+          duration: "Months 2–3",
+          deliverables:
+            "Listing detail views, filter controls, chat integration.",
+        },
+        {
+          phase: "Phase 3: Store Approvals & Launch",
+          duration: "Month 4",
+          deliverables: "App Store and Google Play live publishing.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live Production Shipped Application",
-        clientCommitment: "Routine maintenance and bug-fix SLA managed efficiently.",
-        availabilityNotice: "🟢 Open for new mobile development projects and full-stack software consulting.",
+        clientCommitment:
+          "Routine maintenance and bug-fix SLA managed efficiently.",
+        availabilityNotice:
+          "Open for new mobile development projects and full-stack software consulting.",
       },
     },
     {
@@ -250,14 +369,25 @@ export const defaultContent: SiteContent = {
       status: "Live",
       role: "Full-stack · solo build",
       link: "https://organicplugug.com/",
-      tech: ["Next.js", "NestJS", "TypeORM", "PostgreSQL", "Tailwind CSS", "SendGrid"],
+      tech: [
+        "Next.js",
+        "NestJS",
+        "TypeORM",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "SendGrid",
+      ],
       desc: "Complete e-commerce stack — storefront, admin dashboard, and REST API — with live product search, multi-step checkout, and automated transactional email.",
       tagline: "End-to-End E-Commerce Stack (Storefront, Admin CMS & REST API)",
-      proposalScope: "Solely designed, engineered, and deployed the full e-commerce ecosystem, including product catalog, checkout, order notifications, and admin management.",
+      proposalScope:
+        "Solely designed, engineered, and deployed the full e-commerce ecosystem, including product catalog, checkout, order notifications, and admin management.",
       architecture: {
-        overview: "Decoupled architecture with Next.js App Router for frontend storefront & admin dashboard, communicating with a NestJS backend REST API.",
-        frontend: "Next.js (TypeScript), Tailwind CSS, optimistic UI state management.",
-        backend: "NestJS, TypeORM, PostgreSQL, SendGrid transactional mail integration.",
+        overview:
+          "Decoupled architecture with Next.js App Router for frontend storefront & admin dashboard, communicating with a NestJS backend REST API.",
+        frontend:
+          "Next.js (TypeScript), Tailwind CSS, optimistic UI state management.",
+        backend:
+          "NestJS, TypeORM, PostgreSQL, SendGrid transactional mail integration.",
         highlights: [
           "Instant client-side fuzzy product search and filter",
           "Automated transactional emails for order confirmations & status changes",
@@ -266,26 +396,47 @@ export const defaultContent: SiteContent = {
       },
       sdlc: {
         methodology: "Solo Rapid Prototyping to Production Deployment.",
-        planningAndThoughts: "Focused on seamless customer purchase flow and easy product management for non-technical admins.",
-        qualityAssurance: "End-to-end checkout flow testing and database migration verification.",
-        deploymentStrategy: "Vercel edge hosting for Next.js app and cloud server deployment for NestJS API.",
+        planningAndThoughts:
+          "Focused on seamless customer purchase flow and easy product management for non-technical admins.",
+        qualityAssurance:
+          "End-to-end checkout flow testing and database migration verification.",
+        deploymentStrategy:
+          "Vercel edge hosting for Next.js app and cloud server deployment for NestJS API.",
       },
       challenges: [
         {
           title: "Stock Reservation Concurrency During Flash Sales",
-          problem: "Risk of overselling product items during concurrent multi-step checkout attempts.",
-          solution: "Enforced database transaction locks and optimistic stock checks prior to order placement.",
+          problem:
+            "Risk of overselling product items during concurrent multi-step checkout attempts.",
+          solution:
+            "Enforced database transaction locks and optimistic stock checks prior to order placement.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: Backend API & Database Schemas", duration: "Weeks 1–4", deliverables: "NestJS catalog & order API, TypeORM PostgreSQL setup." },
-        { phase: "Phase 2: Storefront & Admin Dashboard", duration: "Weeks 5–8", deliverables: "Next.js storefront, multi-step checkout, admin inventory CMS." },
-        { phase: "Phase 3: Launch & Transactional Emailing", duration: "Weeks 9–10", deliverables: "Live release at organicplugug.com and SendGrid integration." },
+        {
+          phase: "Phase 1: Backend API & Database Schemas",
+          duration: "Weeks 1–4",
+          deliverables: "NestJS catalog & order API, TypeORM PostgreSQL setup.",
+        },
+        {
+          phase: "Phase 2: Storefront & Admin Dashboard",
+          duration: "Weeks 5–8",
+          deliverables:
+            "Next.js storefront, multi-step checkout, admin inventory CMS.",
+        },
+        {
+          phase: "Phase 3: Launch & Transactional Emailing",
+          duration: "Weeks 9–10",
+          deliverables:
+            "Live release at organicplugug.com and SendGrid integration.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live Operational E-Commerce Store",
-        clientCommitment: "Self-sustaining production system with automated transactional emails.",
-        availabilityNotice: "🟢 Available for full-stack e-commerce, web application, and custom software builds.",
+        clientCommitment:
+          "Self-sustaining production system with automated transactional emails.",
+        availabilityNotice:
+          "Available for full-stack e-commerce, web application, and custom software builds.",
       },
     },
     {
@@ -299,10 +450,13 @@ export const defaultContent: SiteContent = {
       tech: ["Next.js", "SEO", "Responsive"],
       desc: "Corporate site for a Ugandan electrical engineering & civil works contractor (33kV works, power lines, solar street lighting) trusted by Bank of Uganda, UETCL, and UNBS — services, project portfolio, certifications, and quote requests.",
       tagline: "High-Performance Corporate Engineering Contractor Portal",
-      proposalScope: "Designed and implemented a fast, accessible corporate web application showcasing heavy civil & electrical engineering projects for government and corporate clients.",
+      proposalScope:
+        "Designed and implemented a fast, accessible corporate web application showcasing heavy civil & electrical engineering projects for government and corporate clients.",
       architecture: {
-        overview: "Next.js static site architecture optimized for speed, accessibility, and search engine visibility.",
-        frontend: "Next.js, TypeScript, Tailwind CSS, WebP image asset pipeline.",
+        overview:
+          "Next.js static site architecture optimized for speed, accessibility, and search engine visibility.",
+        frontend:
+          "Next.js, TypeScript, Tailwind CSS, WebP image asset pipeline.",
         highlights: [
           "Sub-second page load times across mobile networks",
           "Structured JSON-LD schema metadata for search engine indexing",
@@ -311,26 +465,46 @@ export const defaultContent: SiteContent = {
       },
       sdlc: {
         methodology: "Waterfall Client Discovery to Agile Iterative Design.",
-        planningAndThoughts: "Organized complex technical contractor certifications, project portfolios, and compliance documentation into an intuitive navigation structure.",
-        qualityAssurance: "Lighthouse performance audits scoring 95+ across SEO, Accessibility, and Performance.",
-        deploymentStrategy: "Automated Vercel deployment with continuous deployment from main git branch.",
+        planningAndThoughts:
+          "Organized complex technical contractor certifications, project portfolios, and compliance documentation into an intuitive navigation structure.",
+        qualityAssurance:
+          "Lighthouse performance audits scoring 95+ across SEO, Accessibility, and Performance.",
+        deploymentStrategy:
+          "Automated Vercel deployment with continuous deployment from main git branch.",
       },
       challenges: [
         {
           title: "High Image Payload Causing Slow LCP Scores",
-          problem: "High-resolution photography of 33kV power line installations degraded mobile load performance.",
-          solution: "Implemented Next.js dynamic image optimization, automatic WebP conversion, and responsive picture breakpoints.",
+          problem:
+            "High-resolution photography of 33kV power line installations degraded mobile load performance.",
+          solution:
+            "Implemented Next.js dynamic image optimization, automatic WebP conversion, and responsive picture breakpoints.",
         },
       ],
       timeline: [
-        { phase: "Discovery & Content Structuring", duration: "Week 1", deliverables: "Information architecture and wireframes." },
-        { phase: "Frontend Build & SEO", duration: "Week 2", deliverables: "Next.js components, SEO metadata implementation." },
-        { phase: "Launch & Sign-off", duration: "Week 3", deliverables: "Production launch at kasitechnicalserviceslimited.com." },
+        {
+          phase: "Discovery & Content Structuring",
+          duration: "Week 1",
+          deliverables: "Information architecture and wireframes.",
+        },
+        {
+          phase: "Frontend Build & SEO",
+          duration: "Week 2",
+          deliverables: "Next.js components, SEO metadata implementation.",
+        },
+        {
+          phase: "Launch & Sign-off",
+          duration: "Week 3",
+          deliverables:
+            "Production launch at kasitechnicalserviceslimited.com.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live Corporate Website",
-        clientCommitment: "Fully operational static deployment requiring zero ongoing server maintenance.",
-        availabilityNotice: "🟢 Readily available for high-tier corporate web applications and frontend contracts.",
+        clientCommitment:
+          "Fully operational static deployment requiring zero ongoing server maintenance.",
+        availabilityNotice:
+          "Readily available for high-tier corporate web applications and frontend contracts.",
       },
     },
     {
@@ -344,9 +518,11 @@ export const defaultContent: SiteContent = {
       tech: ["NextJS", "NestJS", "Postgresql", "Typeorm"],
       desc: "An online grocery delivery service for Uganda (it offers ordering of fresh groceries, household essentials, and beverages online, with fast delivery across Uganda and daily deals and coupons).",
       tagline: "Online Grocery Delivery & Coupon Engine Platform",
-      proposalScope: "Developed product catalog search, delivery scheduling logic, and custom coupon discount engines.",
+      proposalScope:
+        "Developed product catalog search, delivery scheduling logic, and custom coupon discount engines.",
       architecture: {
-        overview: "Next.js frontend connected to NestJS microservices backend with PostgreSQL persistence.",
+        overview:
+          "Next.js frontend connected to NestJS microservices backend with PostgreSQL persistence.",
         frontend: "Next.js App Router, Tailwind CSS, stateful cart management.",
         backend: "NestJS, TypeORM, Redis caching for active promotion coupons.",
         highlights: [
@@ -356,25 +532,37 @@ export const defaultContent: SiteContent = {
       },
       sdlc: {
         methodology: "Agile Sprints with continuous feedback.",
-        planningAndThoughts: "Focused on high re-order conversion rates and fast checkout for daily essentials.",
+        planningAndThoughts:
+          "Focused on high re-order conversion rates and fast checkout for daily essentials.",
         qualityAssurance: "Automated API route testing and cart verification.",
         deploymentStrategy: "Cloud web application hosting.",
       },
       challenges: [
         {
           title: "Handling Coupon Code Concurrency & Expiration",
-          problem: "Preventing expired or over-used discount coupons from passing checkout validation.",
-          solution: "Utilized Redis cache for high-speed coupon validation and database transactions during final checkout.",
+          problem:
+            "Preventing expired or over-used discount coupons from passing checkout validation.",
+          solution:
+            "Utilized Redis cache for high-speed coupon validation and database transactions during final checkout.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: Catalog & Checkout Engine", duration: "Months 1–2", deliverables: "Grocery catalog, cart, and payment API." },
-        { phase: "Phase 2: Coupon Engine & Delivery Logistics", duration: "Month 3", deliverables: "Coupon engine, address locator, live release." },
+        {
+          phase: "Phase 1: Catalog & Checkout Engine",
+          duration: "Months 1–2",
+          deliverables: "Grocery catalog, cart, and payment API.",
+        },
+        {
+          phase: "Phase 2: Coupon Engine & Delivery Logistics",
+          duration: "Month 3",
+          deliverables: "Coupon engine, address locator, live release.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "Live Operational E-Commerce Platform",
         clientCommitment: "Maintained in active production.",
-        availabilityNotice: "🟢 Available for full-stack software development and e-commerce engineering.",
+        availabilityNotice:
+          "Available for full-stack software development and e-commerce engineering.",
       },
     },
     {
@@ -385,16 +573,31 @@ export const defaultContent: SiteContent = {
       status: "In development",
       role: "Full-stack · personal",
       link: "https://findit-landing-page.onrender.com",
-      tech: ["Next.js", "MongoDB", "Nodemailer", "Redis", "Node.js", "Express", "Tesseract OCR", "Cypress"],
+      tech: [
+        "Next.js",
+        "MongoDB",
+        "Nodemailer",
+        "Redis",
+        "Node.js",
+        "Express",
+        "Tesseract OCR",
+        "Cypress",
+      ],
       desc: "Lost-document recovery system helping citizens retrieve student IDs, national IDs, and driver's licenses — powered by Next.js, Node.js, Express, MongoDB, Nodemailer, Redis, and a Tesseract OCR computer vision pipeline; tested end-to-end with Cypress.",
       tagline: "Automated OCR Lost-Document Extraction & Matching Engine",
-      proposalScope: "Personal R&D initiative to automate data extraction from uploaded photographs of lost identity documents using computer vision.",
+      proposalScope:
+        "Personal R&D initiative to automate data extraction from uploaded photographs of lost identity documents using computer vision.",
       architecture: {
-        overview: "Full-stack architecture featuring a Next.js web application coupled with a Node.js / Express backend service, MongoDB document persistence, Redis caching, Nodemailer transactional mailer, and Tesseract OCR engine.",
-        frontend: "Next.js App Router (TypeScript) with drag-and-drop document upload interface.",
-        backend: "Node.js, Express REST API, Tesseract OCR computer vision processing pipeline, MongoDB database, Nodemailer notification engine, and Redis cache layer.",
-        database: "MongoDB document store holding encrypted user records and document metadata matches.",
-        infrastructure: "Redis cache for rapid match candidate lookups and Render hosting with automated Cypress E2E test runs.",
+        overview:
+          "Full-stack architecture featuring a Next.js web application coupled with a Node.js / Express backend service, MongoDB document persistence, Redis caching, Nodemailer transactional mailer, and Tesseract OCR engine.",
+        frontend:
+          "Next.js App Router (TypeScript) with drag-and-drop document upload interface.",
+        backend:
+          "Node.js, Express REST API, Tesseract OCR computer vision processing pipeline, MongoDB database, Nodemailer notification engine, and Redis cache layer.",
+        database:
+          "MongoDB document store holding encrypted user records and document metadata matches.",
+        infrastructure:
+          "Redis cache for rapid match candidate lookups and Render hosting with automated Cypress E2E test runs.",
         highlights: [
           "Automated OCR text extraction from damaged document photographs",
           "Redis caching for high-speed document search matching",
@@ -405,31 +608,53 @@ export const defaultContent: SiteContent = {
       },
       sdlc: {
         methodology: "Test-Driven Development (TDD) & Computer Vision R&D.",
-        planningAndThoughts: "Designed to solve the widespread problem of lost national IDs in Uganda through automated document parsing and notification alerts.",
-        qualityAssurance: "Comprehensive Cypress E2E test suites covering image upload, pre-processing, and OCR text matching.",
-        deploymentStrategy: "Automated CI pipeline running Cypress tests before deployment to Render cloud platform.",
+        planningAndThoughts:
+          "Designed to solve the widespread problem of lost national IDs in Uganda through automated document parsing and notification alerts.",
+        qualityAssurance:
+          "Comprehensive Cypress E2E test suites covering image upload, pre-processing, and OCR text matching.",
+        deploymentStrategy:
+          "Automated CI pipeline running Cypress tests before deployment to Render cloud platform.",
       },
       challenges: [
         {
           title: "Low OCR Accuracy on Damaged & Glared Document Images",
-          problem: "Phone photos of plastic IDs often suffered from glare and low contrast, resulting in garbled text.",
-          solution: "Built an automated image pre-processing pipeline (grayscale conversion, adaptive thresholding, and contrast sharpening) prior to OCR parsing.",
+          problem:
+            "Phone photos of plastic IDs often suffered from glare and low contrast, resulting in garbled text.",
+          solution:
+            "Built an automated image pre-processing pipeline (grayscale conversion, adaptive thresholding, and contrast sharpening) prior to OCR parsing.",
         },
         {
           title: "Real-Time Notification & Matching Performance",
-          problem: "Parsing high volumes of document scans without slowing down email match alerts.",
-          solution: "Integrated Redis caching for match indexing and offloaded email delivery to Nodemailer background jobs.",
+          problem:
+            "Parsing high volumes of document scans without slowing down email match alerts.",
+          solution:
+            "Integrated Redis caching for match indexing and offloaded email delivery to Nodemailer background jobs.",
         },
       ],
       timeline: [
-        { phase: "Phase 1: OCR Computer Vision Prototype", duration: "Month 1", deliverables: "Image preprocessing and Tesseract integration." },
-        { phase: "Phase 2: Next.js UI, Redis & Nodemailer Integration", duration: "Month 2", deliverables: "Next.js portal, Redis cache, Nodemailer notifications." },
-        { phase: "Phase 3: Cypress E2E Testing & Public Pilot", duration: "Month 3–Present", deliverables: "Cypress automated test suite, live pilot at findit-landing-page.onrender.com." },
+        {
+          phase: "Phase 1: OCR Computer Vision Prototype",
+          duration: "Month 1",
+          deliverables: "Image preprocessing and Tesseract integration.",
+        },
+        {
+          phase: "Phase 2: Next.js UI, Redis & Nodemailer Integration",
+          duration: "Month 2",
+          deliverables:
+            "Next.js portal, Redis cache, Nodemailer notifications.",
+        },
+        {
+          phase: "Phase 3: Cypress E2E Testing & Public Pilot",
+          duration: "Month 3–Present",
+          deliverables:
+            "Cypress automated test suite, live pilot at findit-landing-page.onrender.com.",
+        },
       ],
       maintenanceAndAvailability: {
         status: "In Active R&D / Pilot Development",
         clientCommitment: "Personal innovation project.",
-        availabilityNotice: "Open for technical contracts, full-stack roles, and AI/document processing consulting.",
+        availabilityNotice:
+          "Open for technical contracts, full-stack roles, and AI/document processing consulting.",
       },
     },
   ],
@@ -437,12 +662,14 @@ export const defaultContent: SiteContent = {
     {
       id: 1,
       label: "Front-End",
-      items: "React.js · Next.js · React Native · TypeScript · Redux Toolkit · TanStack Query · Flutter · Tailwind CSS",
+      items:
+        "React.js · Next.js · React Native · TypeScript · Redux Toolkit · TanStack Query · Flutter · Tailwind CSS",
     },
     {
       id: 2,
       label: "Back-End",
-      items: "Node.js · NestJS · Express.js · Django · REST APIs · GraphQL · TypeORM",
+      items:
+        "Node.js · NestJS · Express.js · Django · REST APIs · GraphQL · TypeORM",
     },
     {
       id: 3,
@@ -452,7 +679,8 @@ export const defaultContent: SiteContent = {
     {
       id: 4,
       label: "DevOps & Tools",
-      items: "Docker · Kubernetes · GitHub Actions · GitLab CI/CD · Vercel · AWS · Figma · Cypress · Jest",
+      items:
+        "Docker · Kubernetes · GitHub Actions · GitLab CI/CD · Vercel · AWS · Figma · Cypress · Jest",
     },
   ],
 };
