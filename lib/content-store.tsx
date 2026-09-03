@@ -24,7 +24,22 @@ function getSnapshot(): SiteContent {
   if (raw !== cachedRaw) {
     cachedRaw = raw;
     try {
-      cachedContent = raw ? { ...defaultContent, ...JSON.parse(raw) } : defaultContent;
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        const mergedProjects = [...(parsed.projects || [])];
+        for (const defaultProj of defaultContent.projects) {
+          if (!mergedProjects.some((p: Project) => p.id === defaultProj.id || p.title === defaultProj.title)) {
+            mergedProjects.unshift(defaultProj);
+          }
+        }
+        cachedContent = {
+          ...defaultContent,
+          ...parsed,
+          projects: mergedProjects,
+        };
+      } else {
+        cachedContent = defaultContent;
+      }
     } catch {
       cachedContent = defaultContent;
     }
