@@ -37,6 +37,60 @@ export const defaultContent: SiteContent = {
   ],
   projects: [
     {
+      id: 10,
+      title: "Salad Treat — Fresh Meal Subscriptions & Custom Salad Builder",
+      year: "2026",
+      platform: "Web",
+      status: "Live",
+      role: "Full-stack · Proposal Build",
+      link: "https://salad-treat-ug.vercel.app/",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zod", "Heroicons"],
+      desc: "Modern digital platform and interactive ordering engine for Kampala's leading fresh salad subscription brand. Features curated weekly/monthly meal plans, signature bowls, an interactive Custom Bowl Builder, local UGX price calculations, and instant WhatsApp order dispatch.",
+      tagline: "High-Conversion Meal Subscription Platform & Interactive Bowl Builder",
+      proposalScope: "Designed and engineered an end-to-end proposal platform featuring dynamic meal subscription management, fluid mobile swiping UX, Zod-validated data schemas, and zero-friction WhatsApp checkout.",
+      architecture: {
+        overview: "Built using Next.js App Router and TypeScript, modularized around clean feature domain boundaries with Zod payload validation and responsive mobile-first typography.",
+        frontend: "Next.js App Router, TypeScript, Tailwind CSS, custom design tokens, fluid swipe tabs, and accessible UI controls.",
+        backend: "Static & serverless prerendering architecture with WhatsApp API integration for instant order payload transmission.",
+        database: "Typed JSON domain datasets enforcing strict Zod schemas for meal plans, signature bowls, and custom ingredients.",
+        infrastructure: "Vercel Edge Network deployment with sub-second page performance.",
+        highlights: [
+          "Interactive 4-step Custom Bowl Builder with dynamic UGX price calculator",
+          "Fluid mobile swipe navigation with non-intrusive inline helper guidance",
+          "WhatsApp direct-order generator pre-populating item choices, meal plans, and delivery zones",
+          "100% authentic brand aesthetic with transparent assets and structured SEO meta tags",
+        ],
+      },
+      sdlc: {
+        methodology: "Rapid Value-Driven Design & Interactive Proposal Development.",
+        planningAndThoughts: "Designed as a high-conversion client proposal to showcase how Salad Treat can modernize their customer ordering experience, eliminate phone order friction, and boost subscription retention across Kampala.",
+        qualityAssurance: "Strict TypeScript type checking, Zod runtime schema validation, static build prerendering verification, and multi-device mobile UX testing.",
+        deploymentStrategy: "Production edge deployment on Vercel with automated Git continuous integration.",
+      },
+      challenges: [
+        {
+          title: "Complex Multi-Step Customization Without Order Friction",
+          problem: "Customers needed to choose bases, proteins, toppings, and dressings with live pricing without feeling overwhelmed by a complex form.",
+          solution: "Architected a progressive 4-step Custom Bowl Builder with active progress feedback, live UGX total calculations, and single-click WhatsApp checkout.",
+        },
+        {
+          title: "Mobile Navigation & Micro-Interactions",
+          problem: "Category tabs were crowded on mobile screens, leading to layout shift and poor user experience.",
+          solution: "Implemented horizontal swipeable tabs with hidden scrollbars and inline context guidance banners.",
+        },
+      ],
+      timeline: [
+        { phase: "Phase 1: Brand Strategy & UI Design", duration: "Days 1–2", deliverables: "Custom vegetable heart branding, responsive typography hierarchy, color tokens." },
+        { phase: "Phase 2: Core Engineering & Custom Builder", duration: "Days 3–5", deliverables: "Next.js storefront, 4-step builder, WhatsApp integration, Zod schema validation." },
+        { phase: "Phase 3: Optimization & Vercel Deployment", duration: "Days 6–7", deliverables: "Live release at salad-treat-ug.vercel.app with edge optimization." },
+      ],
+      maintenanceAndAvailability: {
+        status: "Live Proposal Site",
+        clientCommitment: "Fully operational web application hosted on Vercel.",
+        availabilityNotice: "🟢 Available for full-stack web applications, custom subscription platforms, and client digital modernizations.",
+      },
+    },
+    {
       id: 9,
       title: "Be-Hurry — Microfinance Loan Management System",
       year: "2026",
