@@ -37,6 +37,56 @@ export const defaultContent: SiteContent = {
   ],
   projects: [
     {
+      id: 11,
+      title: "Hidden Pearl Expeditions — Luxury Uganda Safari Booking Website",
+      year: "2026",
+      platform: "Web",
+      status: "In Development",
+      role: "Full-stack · Design & Build",
+      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Heroicons"],
+      desc: "Marketing and inquiry website for a locally owned Uganda safari operator offering private gorilla, chimpanzee and savannah expeditions. Features a searchable, sortable and paginated expedition catalogue, day-by-day timeline pages for every package, a blog with structured data, an inquiry form with a date-range picker that hands the trip details to WhatsApp, and a hero photo slideshow.",
+      tagline: "Premium Safari Expedition Catalogue with WhatsApp-First Inquiries",
+      proposalScope: "Designed and engineered the complete public website: brand-aligned design system, expedition catalogue with filters and pagination, expedition detail pages, blog, privacy and terms pages, SEO foundations, and a non-blocking offline status bar.",
+      architecture: {
+        overview: "Built on the Next.js App Router with TypeScript. Content lives in typed modules and every public page is prerendered, with small client components only where interaction is needed (filters, dropdowns, calendar, slideshow).",
+        frontend: "Next.js App Router, React Server Components, Tailwind CSS v4 design tokens, Outfit and Plus Jakarta Sans via next/font, Heroicons, and a reusable component library (buttons, inputs, dropdown, date-range picker, pagination, chips).",
+        backend: "None required. Inquiries are composed on the client and handed to WhatsApp, so no personal data is stored on a server.",
+        database: "Typed in-repository content modules for expeditions, articles, reviews and site settings, giving compile-time safety and instant static builds.",
+        infrastructure: "Static prerendering with next/image optimisation (AVIF and WebP), inlined blur placeholders, a web app manifest, robots.txt and an automatically generated sitemap.",
+        highlights: [
+          "Searchable, filterable, sortable expedition catalogue with URL-synced pagination",
+          "Custom dropdown and two-month date-range picker ported from a production design system",
+          "Full-bleed sliding hero carousel that respects reduced-motion preferences and pauses in background tabs",
+          "SEO foundations: per-page metadata, canonical URLs, Open Graph, and JSON-LD for the business, expeditions, articles and breadcrumbs",
+          "YouTube-style offline bar with retry and a brief back-online confirmation",
+          "Drafted privacy policy and terms of service matched to the real data flow",
+        ],
+      },
+      sdlc: {
+        methodology: "Reference-driven iterative design: a static prototype and an existing production design system guided structure, typography and interaction patterns.",
+        planningAndThoughts: "Prioritised clarity of the booking path: a visitor should find the expedition packages immediately, understand price and effort at a glance, and reach a planner in one step. Heavy interaction is reserved for the catalogue page so the landing page stays focused.",
+        qualityAssurance: "Strict TypeScript, ESLint, production build verification, responsive checks at phone, tablet and desktop widths, simulated offline and reconnect testing, and Lighthouse mobile audits.",
+        deploymentStrategy: "Prepared for deployment on a modern edge platform with automated builds from Git.",
+      },
+      challenges: [
+        {
+          title: "Fast, Image-Heavy Pages",
+          problem: "A wildlife site lives on large photography, which threatened load speed and layout stability on mobile connections.",
+          solution: "Served AVIF and WebP at tuned sizes, inlined tiny blur previews, loaded only the first hero photo with the page and the rest when the browser is idle, and rendered image components on the server. A mobile Lighthouse run improved from 0.75 to 0.87 and page weight dropped by about 28%.",
+        },
+        {
+          title: "Handling Inquiries Without a Backend",
+          problem: "The client wanted leads delivered instantly to WhatsApp without the cost and privacy burden of storing visitor data.",
+          solution: "Built a validated inquiry form with a custom date-range picker that assembles a structured message and opens WhatsApp, with clear inline feedback when the visitor is offline.",
+        },
+      ],
+      maintenanceAndAvailability: {
+        status: "In Development",
+        clientCommitment: "Production-ready codebase with typed content modules that make adding expeditions and articles a data-only change.",
+        availabilityNotice: "🟢 Available for tourism, hospitality and catalogue-style websites with performance, SEO and polished UI as priorities.",
+      },
+    },
+    {
       id: 10,
       title: "Salad Treat — Fresh Meal Subscriptions & Custom Salad Builder",
       year: "2026",
