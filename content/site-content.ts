@@ -41,8 +41,9 @@ export const defaultContent: SiteContent = {
       title: "Hidden Pearl Expeditions — Luxury Uganda Safari Booking Website",
       year: "2026",
       platform: "Web",
-      status: "In Development",
+      status: "Live",
       role: "Full-stack · Design & Build",
+      link: "https://wildlife-bnj3.onrender.com",
       tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Heroicons"],
       desc: "Marketing and inquiry website for a locally owned Uganda safari operator offering private gorilla, chimpanzee and savannah expeditions. Features a searchable, sortable and paginated expedition catalogue, day-by-day timeline pages for every package, a blog with structured data, an inquiry form with a date-range picker that hands the trip details to WhatsApp, and a hero photo slideshow.",
       tagline: "Premium Safari Expedition Catalogue with WhatsApp-First Inquiries",
@@ -66,7 +67,7 @@ export const defaultContent: SiteContent = {
         methodology: "Reference-driven iterative design: a static prototype and an existing production design system guided structure, typography and interaction patterns.",
         planningAndThoughts: "Prioritised clarity of the booking path: a visitor should find the expedition packages immediately, understand price and effort at a glance, and reach a planner in one step. Heavy interaction is reserved for the catalogue page so the landing page stays focused.",
         qualityAssurance: "Strict TypeScript, ESLint, production build verification, responsive checks at phone, tablet and desktop widths, simulated offline and reconnect testing, and Lighthouse mobile audits.",
-        deploymentStrategy: "Prepared for deployment on a modern edge platform with automated builds from Git.",
+        deploymentStrategy: "Deployed on Render as a Node web service with automated builds from Git.",
       },
       challenges: [
         {
@@ -81,7 +82,7 @@ export const defaultContent: SiteContent = {
         },
       ],
       maintenanceAndAvailability: {
-        status: "In Development",
+        status: "Live Production Website",
         clientCommitment: "Production-ready codebase with typed content modules that make adding expeditions and articles a data-only change.",
         availabilityNotice: "🟢 Available for tourism, hospitality and catalogue-style websites with performance, SEO and polished UI as priorities.",
       },
